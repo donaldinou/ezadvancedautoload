@@ -1,0 +1,20 @@
+
+EETETTTTETETTTEEEEETTETTETEETE
+TTETTETEETTTTTTEEETTEEETETETTE
+TTTE                      TTET
+EEEE                      TEET
+TETEEEET    EEE    ETETETETEET
+ETETTETT    EET         TEETET
+TTETTEET    TET         ETTETT
+ETTEETTT    TTT    ETEETETTETE
+EEETEEEE    TTT          TEETT
+ETEEETEE   EEEE          TETTE
+EETTEEEETTETTETTEETTTTETEETTEE
+TEETETETETTEEEEEETTTEETTETEEEE                     Technology-Everywhere.
+_________________________________________________________________________
+
+<2012-xx-yy>:
+   * Rewrite ezpgenerateautoloads.php script to be more 'eZ lookable'
+   * Set autoload generation configurable
+   * Modify BackOffice template to authorize all we can set in command
+   line interface

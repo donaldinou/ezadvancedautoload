@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>eZ Advanced Autoloads</name>
+        <version>1.0.0</version>
+        <copyright>Copyright (C) Technology Everywhere</copyright>
+        <license>GNU GENERAL PUBLIC LICENSE Version 2</license>
+        <info_url>http://www.technology-everywhere.fr</info_url>
+    </metadata>
+    <dependencies>
+        <use>ezjscore</use>
+    </dependencies>
+</software>
