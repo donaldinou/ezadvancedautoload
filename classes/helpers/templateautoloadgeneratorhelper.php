@@ -1,8 +1,9 @@
 <?php 
-namespace extension\ezadvancedautoload\helpers {
+namespace extension\ezadvancedautoload\classes\helpers {
 	
-	use extension\ezadvancedautoload\eZAutoloadGenerator;
-	use extension\ezadvancedautoload\enums\autoloadGeneratorEnum;
+	use extension\ezadvancedautoload\pv\classes\eZAutoloadGenerator; // FIXME: private is a reserved keyword
+	use extension\ezadvancedautoload\classes\enums\autoloadGeneratorEnum;
+	use extension\ezadvancedautoload\classes\exceptions\unexpectedModeException;
 	
 	/**
 	 * @brief Helper witch provide help to correctly build autoload file
@@ -15,11 +16,9 @@ namespace extension\ezadvancedautoload\helpers {
 	 * @since 1.0.0
 	 * @copyright GNU Public License v.2
 	 * 
-	 * @package extension\ezadvancedautoload\enums
-	 * 
-	 * @todo block clone construct etc... methods
+	 * @package extension\ezadvancedautoload\classes\enums
 	 */
-	abstract class templateAutoloadGeneratorHelper {
+	abstract class templateAutoloadGeneratorHelper extends Helper {
 		
 		/**
 		 * @brief Regenerate autoload for defined options (mode)
@@ -28,10 +27,9 @@ namespace extension\ezadvancedautoload\helpers {
 		 * @param int $mode Type of regeneration. You can use | (pipe) to define more than one type
 		 * @param \eZTemplate $template the template to set the debug if we are in graphical mode
 		 * @return void
-		 * @throws Exception
+		 * @throws unexpectedModeException
 		 * 
 		 * @example templateAutoloadGeneratorHelper::regenerate(eZAutoloadGenerator::KERNEL_OVERRIDE|eZAutoloadGenerator::EXTENSION, null);
-		 * @todo own exception
 		 */
 		public static function regenerate($mode, \eZTemplate $template = null ) {
 			if (is_int($mode)) {
@@ -57,7 +55,7 @@ namespace extension\ezadvancedautoload\helpers {
 						break;
 				}
 			} else {
-				throw new Exception( 'Incorrect mode for autoload regeneration' );
+				throw new unexpectedModeException( $mode );
 			}
 		}
 		

@@ -1,0 +1,235 @@
+.TH "extension\ezadvancedautoload\pv\classes\eZAutoloadGenerator" 3 "Thu Mar 8 2012" "Version 1.0.0-RC" "eZ Advanced Autoload" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+extension\ezadvancedautoload\pv\classes\eZAutoloadGenerator \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (\\ezpAutoloadGeneratorOptions $options=null)"
+.br
+.RI "\fIConstructs class to generate autoload arrays\&. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBfindRecursive\fP ($sourceDir, array $includeFilters=array(), array $excludeFilters=array(),\\\fBeZAutoloadGenerator\fP $gen)"
+.br
+.RI "\fIWalker to find file\&. \fP"
+.ti -1c
+.RI "static \fBfindRecursiveCallback\fP (\\ezpAutoloadFileFindContext $context, $sourceDir, $fileName, $fileInfo)"
+.br
+.RI "\fICallback used ezcBaseFile\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbuildFileList\fP ($path, array $extraFilter=null)"
+.br
+.RI "\fIBuilds a filelist of PHP files in $path\&. \fP"
+.ti -1c
+.RI "\fBclassExistsInArray\fP ($class, $checkMode, $file, array $inProgressAutoloadArray=null, $generatingMode=null)"
+.br
+.RI "\fIInternal method used to check if an class exist autoload arrays\&. \fP"
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBisFinerFilterEnabled\fP ()"
+.br
+.RI "\fIreturn true if finer filter is enable \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$activeExtensions\fP"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBgetExtensionName\fP ($path)"
+.br
+.RI "\fIReturn the extension name to the path\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file ezautoloadgenerator\&.php\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "extension\\ezadvancedautoload\\pv\\classes\\\fBeZAutoloadGenerator::__construct\fP (\\ezpAutoloadGeneratorOptions $options = \fCnull\fP)"
+.PP
+Constructs class to generate autoload arrays\&. Constructor
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$options\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file ezautoloadgenerator\&.php\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "extension\\ezadvancedautoload\\pv\\classes\\\fBeZAutoloadGenerator::buildFileList\fP ($path, array $extraFilter = \fCnull\fP)\fC [protected]\fP"
+.PP
+Builds a filelist of PHP files in $path\&. Builds a filelist array of PHP files in $path\&. Use the static keyword for \fClate static binding\fP
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$path\fP 
+.br
+\fI$extraFilter\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+array 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file ezautoloadgenerator\&.php\&.
+.PP
+References extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator\\findRecursive()\&.
+.SS "extension\\ezadvancedautoload\\pv\\classes\\\fBeZAutoloadGenerator::classExistsInArray\fP ($class, $checkMode, $file, array $inProgressAutoloadArray = \fCnull\fP, $generatingMode = \fCnull\fP)\fC [protected]\fP"
+.PP
+Internal method used to check if an class exist autoload arrays\&. Internal method used to check if an class exist autoload arrays\&. If it already exist then it check the priority with the active extensions\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$class\fP The name of the class being checked\&. 
+.br
+\fI$checkMode\fP The mode whose autoload arrays will be checked\&. 
+.br
+\fI$file\fP Filename containing the class\&. 
+.br
+\fI$inProgressAutoloadArray\fP The autoload array generated so far\&. 
+.br
+\fI$generatingMode\fP The mode we are generating for autoloads for\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boolean 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file ezautoloadgenerator\&.php\&.
+.PP
+References extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator\\getExtensionName()\&.
+.SS "static extension\\ezadvancedautoload\\pv\\classes\\\fBeZAutoloadGenerator::findRecursive\fP ($sourceDir, array $includeFilters = \fCarray()\fP, array $excludeFilters = \fCarray()\fP, \\\fBeZAutoloadGenerator\fP $gen)\fC [static]\fP"
+.PP
+Walker to find file\&. Uses the walker in ezcBaseFile to find files\&. This also uses the callback to get progress information about the file search\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$sourceDir\fP 
+.br
+\fI$includeFilters\fP 
+.br
+\fI$excludeFilters\fP 
+.br
+\fI\\eZAutoloadGenerator\fP $gen 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+array 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file ezautoloadgenerator\&.php\&.
+.PP
+Referenced by extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator\\buildFileList()\&.
+.SS "static extension\\ezadvancedautoload\\pv\\classes\\\fBeZAutoloadGenerator::findRecursiveCallback\fP (\\ezpAutoloadFileFindContext $context, $sourceDir, $fileName, $fileInfo)\fC [static]\fP"
+.PP
+Callback used ezcBaseFile\&. Callback function used by \fBeZAutoloadGenerator\fP method
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$ezpAutoloadFileFindContext\fP 
+.br
+\fI$sourceDir\fP 
+.br
+\fI$fileName\fP 
+.br
+\fI$fileInfo\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Definition at line 115 of file ezautoloadgenerator\&.php\&.
+.PP
+References extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator\\getExtensionName()\&.
+.SS "static extension\\ezadvancedautoload\\pv\\classes\\\fBeZAutoloadGenerator::getExtensionName\fP ($path)\fC [static, private]\fP"
+.PP
+Return the extension name to the path\&. Return the name of the ezpublish extension to the path
+.PP
+\fBParameters:\fP
+.RS 4
+\fI$path\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+string
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+put this in a real helper 
+.RE
+.PP
+
+.PP
+Definition at line 226 of file ezautoloadgenerator\&.php\&.
+.PP
+Referenced by extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator\\classExistsInArray(), and extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator\\findRecursiveCallback()\&.
+.SS "static extension\\ezadvancedautoload\\pv\\classes\\\fBeZAutoloadGenerator::isFinerFilterEnabled\fP ()\fC [static, protected]\fP"
+.PP
+return true if finer filter is enable return true if finer filter is enabled in autoload\&.ini
+.PP
+\fBReturns:\fP
+.RS 4
+boolean
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+put this in a real helper 
+.RE
+.PP
+
+.PP
+Definition at line 208 of file ezautoloadgenerator\&.php\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "extension::ezadvancedautoload::pv::classes\\eZAutoloadGenerator::$activeExtensions\fC [protected]\fP"
+.PP
+Definition at line 27 of file ezautoloadgenerator\&.php\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for eZ Advanced Autoload from the source code\&.

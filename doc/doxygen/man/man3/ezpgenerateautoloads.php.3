@@ -1,0 +1,212 @@
+.TH "D:/git/ezadvancedautoload/bin/php/ezpgenerateautoloads.php" 3 "Thu Mar 8 2012" "Version 1.0.0-RC" "eZ Advanced Autoload" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/git/ezadvancedautoload/bin/php/ezpgenerateautoloads.php \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "if(file_exists('config\&.php')) \fB$useBundledComponents\fP = defined( 'EZP_USE_BUNDLED_COMPONENTS' ) ? EZP_USE_BUNDLED_COMPONENTS === true : file_exists( 'lib/ezc' )"
+.br
+.ti -1c
+.RI "\fB$params\fP = new ezcConsoleInput()"
+.br
+.ti -1c
+.RI "\fB$helpOption\fP = new ezcConsoleOption( 'h', 'help' )"
+.br
+.ti -1c
+.RI "$helpOption \fBmandatory\fP = false"
+.br
+.ti -1c
+.RI "$helpOption \fBshorthelp\fP = 'Show help information'"
+.br
+.ti -1c
+.RI "\fB$targetOption\fP = new ezcConsoleOption( 't', 'target', ezcConsoleInput::TYPE_STRING )"
+.br
+.ti -1c
+.RI "\fB$verboseOption\fP = new ezcConsoleOption( 'v', 'verbose', ezcConsoleInput::TYPE_NONE )"
+.br
+.ti -1c
+.RI "\fB$dryrunOption\fP = new ezcConsoleOption( 'n', 'dry-run', ezcConsoleInput::TYPE_NONE )"
+.br
+.ti -1c
+.RI "\fB$kernelFilesOption\fP = new ezcConsoleOption( 'k', 'kernel', ezcConsoleInput::TYPE_NONE )"
+.br
+.ti -1c
+.RI "\fB$kernelOverrideOption\fP = new ezcConsoleOption( 'o', 'kernel-override', ezcConsoleInput::TYPE_NONE )"
+.br
+.ti -1c
+.RI "\fB$extensionFilesOption\fP = new ezcConsoleOption( 'e', 'extension', ezcConsoleInput::TYPE_NONE )"
+.br
+.ti -1c
+.RI "\fB$testFilesOption\fP = new ezcConsoleOption( 's', 'tests', ezcConsoleInput::TYPE_NONE )"
+.br
+.ti -1c
+.RI "\fB$excludeDirsOption\fP = new ezcConsoleOption( '', 'exclude', ezcConsoleInput::TYPE_STRING )"
+.br
+.ti -1c
+.RI "\fB$displayProgressOption\fP = new ezcConsoleOption( 'p', 'progress', ezcConsoleInput::TYPE_NONE )"
+.br
+.ti -1c
+.RI "$params \fBargumentDefinition\fP = new ezcConsoleArguments()"
+.br
+.ti -1c
+.RI "$params \fBargumentDefinition\fP [0] = new ezcConsoleArgument( 'extension' )"
+.br
+.ti -1c
+.RI "$params \fBargumentDefinition\fP[0] \fBdefault\fP = getcwd()"
+.br
+.ti -1c
+.RI "if($excludeDirsOption->value!==false) \fB$autoloadOptions\fP = new ezpAutoloadGeneratorOptions()"
+.br
+.ti -1c
+.RI "$autoloadOptions \fBbasePath\fP = $params->\fBargumentDefinition\fP['extension']->value"
+.br
+.ti -1c
+.RI "$autoloadOptions \fBsearchKernelFiles\fP = $kernelFilesOption->value"
+.br
+.ti -1c
+.RI "$autoloadOptions \fBsearchKernelOverride\fP = $kernelOverrideOption->value"
+.br
+.ti -1c
+.RI "$autoloadOptions \fBsearchExtensionFiles\fP = $extensionFilesOption->value"
+.br
+.ti -1c
+.RI "$autoloadOptions \fBsearchTestFiles\fP = $testFilesOption->value"
+.br
+.ti -1c
+.RI "$autoloadOptions \fBwriteFiles\fP = !$dryrunOption->value"
+.br
+.ti -1c
+.RI "$autoloadOptions \fBdisplayProgress\fP = $displayProgressOption->value"
+.br
+.ti -1c
+.RI "if(!empty($targetOption->value)) 
+.br
+$autoloadOptions \fBexcludeDirs\fP = $\fBexcludeDirs\fP"
+.br
+.ti -1c
+.RI "\fB$autoloadGenerator\fP = new \\extension\\ezadvancedautoload\\eZAutoloadGenerator( $autoloadOptions )"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "$autoloadGenerator = new \\extension\\ezadvancedautoload\\eZAutoloadGenerator( $autoloadOptions )"
+.PP
+Definition at line 153 of file ezpgenerateautoloads\&.php\&.
+.PP
+Referenced by extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\runGenerate()\&.
+.SS "if ($excludeDirsOption->value!==false) $autoloadOptions = new ezpAutoloadGeneratorOptions()"
+.PP
+Definition at line 137 of file ezpgenerateautoloads\&.php\&.
+.PP
+Referenced by extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateExtension(), extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateKernel(), extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateKernelOverride(), and extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateTest()\&.
+.SS "$displayProgressOption = new ezcConsoleOption( 'p', 'progress', ezcConsoleInput::TYPE_NONE )"
+.PP
+Definition at line 99 of file ezpgenerateautoloads\&.php\&.
+.SS "$dryrunOption = new ezcConsoleOption( 'n', 'dry-run', ezcConsoleInput::TYPE_NONE )"
+.PP
+Definition at line 69 of file ezpgenerateautoloads\&.php\&.
+.SS "$excludeDirsOption = new ezcConsoleOption( '', 'exclude', ezcConsoleInput::TYPE_STRING )"
+.PP
+Definition at line 94 of file ezpgenerateautoloads\&.php\&.
+.SS "$extensionFilesOption = new ezcConsoleOption( 'e', 'extension', ezcConsoleInput::TYPE_NONE )"
+.PP
+Definition at line 84 of file ezpgenerateautoloads\&.php\&.
+.SS "$helpOption = new ezcConsoleOption( 'h', 'help' )"
+.PP
+Definition at line 54 of file ezpgenerateautoloads\&.php\&.
+.SS "$kernelFilesOption = new ezcConsoleOption( 'k', 'kernel', ezcConsoleInput::TYPE_NONE )"
+.PP
+Definition at line 74 of file ezpgenerateautoloads\&.php\&.
+.SS "$kernelOverrideOption = new ezcConsoleOption( 'o', 'kernel-override', ezcConsoleInput::TYPE_NONE )"
+.PP
+Definition at line 79 of file ezpgenerateautoloads\&.php\&.
+.SS "$params = new ezcConsoleInput()"
+.PP
+Definition at line 52 of file ezpgenerateautoloads\&.php\&.
+.SS "$targetOption = new ezcConsoleOption( 't', 'target', ezcConsoleInput::TYPE_STRING )"
+.PP
+Definition at line 59 of file ezpgenerateautoloads\&.php\&.
+.SS "$testFilesOption = new ezcConsoleOption( 's', 'tests', ezcConsoleInput::TYPE_NONE )"
+.PP
+Definition at line 89 of file ezpgenerateautoloads\&.php\&.
+.SS "if (file_exists('config\&.php')) $useBundledComponents = defined( 'EZP_USE_BUNDLED_COMPONENTS' ) ? EZP_USE_BUNDLED_COMPONENTS === true : file_exists( 'lib/ezc' )"Script replacement in order to regenerate autoload with ezadvancedautoload extension\&. Script base on \fBezpgenerateautoloads\&.php\fP script for eZPublish community version 2012\&.2
+.PP
+\fBAuthor:\fP
+.RS 4
+Adrien Loyant <adrien.loyant@te-laval.fr>
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2012-03-01 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0\&.0 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+1\&.0\&.0 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+GNU Public License v\&.2 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file ezpgenerateautoloads\&.php\&.
+.SS "$verboseOption = new ezcConsoleOption( 'v', 'verbose', ezcConsoleInput::TYPE_NONE )"
+.PP
+Definition at line 64 of file ezpgenerateautoloads\&.php\&.
+.SS "$params \fBargumentDefinition\fP = new ezcConsoleArguments()"
+.PP
+Definition at line 105 of file ezpgenerateautoloads\&.php\&.
+.SS "$params \fBargumentDefinition\fP[0] = new ezcConsoleArgument( 'extension' )"
+.PP
+Definition at line 107 of file ezpgenerateautoloads\&.php\&.
+.SS "$autoloadOptions \fBbasePath\fP = $params->\fBargumentDefinition\fP['extension']->value"
+.PP
+Definition at line 139 of file ezpgenerateautoloads\&.php\&.
+.SS "$params \fBargumentDefinition\fP [0] \fBdefault\fP = getcwd()"
+.PP
+Definition at line 110 of file ezpgenerateautoloads\&.php\&.
+.SS "$autoloadOptions \fBdisplayProgress\fP = $displayProgressOption->value"
+.PP
+Definition at line 145 of file ezpgenerateautoloads\&.php\&.
+.SS "if (!empty($targetOption->value)) $autoloadOptions \fBexcludeDirs\fP = $\fBexcludeDirs\fP"
+.PP
+Definition at line 151 of file ezpgenerateautoloads\&.php\&.
+.SS "$displayProgressOption \fBmandatory\fP = false"
+.PP
+Definition at line 55 of file ezpgenerateautoloads\&.php\&.
+.SS "$autoloadOptions \fBsearchExtensionFiles\fP = $extensionFilesOption->value"
+.PP
+Definition at line 142 of file ezpgenerateautoloads\&.php\&.
+.SS "$autoloadOptions \fBsearchKernelFiles\fP = $kernelFilesOption->value"
+.PP
+Definition at line 140 of file ezpgenerateautoloads\&.php\&.
+.SS "$autoloadOptions \fBsearchKernelOverride\fP = $kernelOverrideOption->value"
+.PP
+Definition at line 141 of file ezpgenerateautoloads\&.php\&.
+.SS "$autoloadOptions \fBsearchTestFiles\fP = $testFilesOption->value"
+.PP
+Definition at line 143 of file ezpgenerateautoloads\&.php\&.
+.SS "$displayProgressOption \fBshorthelp\fP = 'Show help information'"
+.PP
+Definition at line 56 of file ezpgenerateautoloads\&.php\&.
+.SS "$autoloadOptions \fBwriteFiles\fP = !$dryrunOption->value"
+.PP
+Definition at line 144 of file ezpgenerateautoloads\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for eZ Advanced Autoload from the source code\&.

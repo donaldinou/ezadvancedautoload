@@ -1,0 +1,278 @@
+\hypertarget{ezpgenerateautoloads_8php}{\section{\-D\-:/git/ezadvancedautoload/bin/php/ezpgenerateautoloads.php \-File \-Reference}
+\label{ezpgenerateautoloads_8php}\index{\-D\-:/git/ezadvancedautoload/bin/php/ezpgenerateautoloads.\-php@{\-D\-:/git/ezadvancedautoload/bin/php/ezpgenerateautoloads.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+if(file\-\_\-exists('config.\-php')) \hyperlink{ezpgenerateautoloads_8php_abdb1c04b56bd870d8c95d438c1a3ceb7}{\$use\-Bundled\-Components} = defined( '\-E\-Z\-P\-\_\-\-U\-S\-E\-\_\-\-B\-U\-N\-D\-L\-E\-D\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-S' ) ? \-E\-Z\-P\-\_\-\-U\-S\-E\-\_\-\-B\-U\-N\-D\-L\-E\-D\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-S === true \-: file\-\_\-exists( 'lib/ezc' )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_afe68e6fbe7acfbffc0af0c84a1996466}{\$params} = new ezc\-Console\-Input()
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a785ce4531ef75b21040c99c8cbce7aa4}{\$help\-Option} = new ezc\-Console\-Option( 'h', 'help' )
+\item 
+\$help\-Option \hyperlink{ezpgenerateautoloads_8php_ac38115d855b4d48735ec865ab62bf1fe}{mandatory} = false
+\item 
+\$help\-Option \hyperlink{ezpgenerateautoloads_8php_a6878132bff242d248a03a92df0ead036}{shorthelp} = '\-Show help information'
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a6b7b596c6eccab7f3c39bbcad2d711a0}{\$target\-Option} = new ezc\-Console\-Option( 't', 'target', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a22133d0c8998aa2d18623686cca5faa4}{\$verbose\-Option} = new ezc\-Console\-Option( 'v', 'verbose', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a2157a552be64e9a75918a23fef9e26e7}{\$dryrun\-Option} = new ezc\-Console\-Option( 'n', 'dry-\/run', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a7e74e8adf0bd544754962f4ddd4fc35b}{\$kernel\-Files\-Option} = new ezc\-Console\-Option( 'k', 'kernel', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a67e31a42e7cb071e5c02df2261d6594a}{\$kernel\-Override\-Option} = new ezc\-Console\-Option( 'o', 'kernel-\/override', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a35b967cec5da82cfa9989e036ad50642}{\$extension\-Files\-Option} = new ezc\-Console\-Option( 'e', 'extension', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a42bc54b597a301809a0bdbec1c8f1ee6}{\$test\-Files\-Option} = new ezc\-Console\-Option( 's', 'tests', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_ad444c7af1932b7a85e8351702c783790}{\$exclude\-Dirs\-Option} = new ezc\-Console\-Option( '', 'exclude', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G )
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a407bf0b4ef42d32212f29ac7c8e8a96e}{\$display\-Progress\-Option} = new ezc\-Console\-Option( 'p', 'progress', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )
+\item 
+\$params \hyperlink{ezpgenerateautoloads_8php_ab9a0a1710f335bc48a13e8a94802be23}{argument\-Definition} = new ezc\-Console\-Arguments()
+\item 
+\$params \hyperlink{ezpgenerateautoloads_8php_aed0ba19f5204d9659e823271642a6594}{argument\-Definition} \mbox{[}0\mbox{]} = new ezc\-Console\-Argument( 'extension' )
+\item 
+\$params \hyperlink{ezpgenerateautoloads_8php_aed0ba19f5204d9659e823271642a6594}{argument\-Definition}\mbox{[}0\mbox{]} \hyperlink{ezpgenerateautoloads_8php_a7cbde127000429b4c1ee76be227eca44}{default} = getcwd()
+\item 
+if(\$exclude\-Dirs\-Option-\/$>$value!==false) \hyperlink{ezpgenerateautoloads_8php_a11b2b8d92ed8fe93c2e53197e661142c}{\$autoload\-Options} = new ezp\-Autoload\-Generator\-Options()
+\item 
+\$autoload\-Options \hyperlink{ezpgenerateautoloads_8php_a29816a8455ff45c83cd2e389735c8207}{base\-Path} = \$params-\/$>$\hyperlink{ezpgenerateautoloads_8php_aed0ba19f5204d9659e823271642a6594}{argument\-Definition}\mbox{[}'extension'\mbox{]}-\/$>$value
+\item 
+\$autoload\-Options \hyperlink{ezpgenerateautoloads_8php_aab46cc9fff71273094aafac8ebd689d4}{search\-Kernel\-Files} = \$kernel\-Files\-Option-\/$>$value
+\item 
+\$autoload\-Options \hyperlink{ezpgenerateautoloads_8php_af86b9a19664645803f32b4d5bb872ff1}{search\-Kernel\-Override} = \$kernel\-Override\-Option-\/$>$value
+\item 
+\$autoload\-Options \hyperlink{ezpgenerateautoloads_8php_ae648f5335e57fa264ffaaf9d2fe4c61b}{search\-Extension\-Files} = \$extension\-Files\-Option-\/$>$value
+\item 
+\$autoload\-Options \hyperlink{ezpgenerateautoloads_8php_a3727c480754aa7c8b3dc7e8070ed1eb4}{search\-Test\-Files} = \$test\-Files\-Option-\/$>$value
+\item 
+\$autoload\-Options \hyperlink{ezpgenerateautoloads_8php_a210f8683b204a76199152312e3d9a177}{write\-Files} = !\$dryrun\-Option-\/$>$value
+\item 
+\$autoload\-Options \hyperlink{ezpgenerateautoloads_8php_aa79f55582aba2bd3eff4d3fa4b980a84}{display\-Progress} = \$display\-Progress\-Option-\/$>$value
+\item 
+if(!empty(\$target\-Option-\/$>$value)) \*
+\$autoload\-Options \hyperlink{ezpgenerateautoloads_8php_a52217447e9aa7d329a16ea69370b42a4}{exclude\-Dirs} = \$\hyperlink{ezpgenerateautoloads_8php_a52217447e9aa7d329a16ea69370b42a4}{exclude\-Dirs}
+\item 
+\hyperlink{ezpgenerateautoloads_8php_a86e95d193d321273aadaef08750683a8}{\$autoload\-Generator} = new $\backslash$extension$\backslash$ezadvancedautoload$\backslash$e\-Z\-Autoload\-Generator( \$autoload\-Options )
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{ezpgenerateautoloads_8php_a86e95d193d321273aadaef08750683a8}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$autoload\-Generator@{\$autoload\-Generator}}
+\index{\$autoload\-Generator@{\$autoload\-Generator}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$autoload\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}\$autoload\-Generator = new $\backslash$extension$\backslash$ezadvancedautoload$\backslash$e\-Z\-Autoload\-Generator( \$autoload\-Options )}}\label{ezpgenerateautoloads_8php_a86e95d193d321273aadaef08750683a8}
+
+
+\-Definition at line 153 of file ezpgenerateautoloads.\-php.
+
+
+
+\-Referenced by extension$\backslash$ezadvancedautoload$\backslash$classes$\backslash$helpers$\backslash$template\-Autoload\-Generator\-Helper$\backslash$run\-Generate().
+
+\hypertarget{ezpgenerateautoloads_8php_a11b2b8d92ed8fe93c2e53197e661142c}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$autoload\-Options@{\$autoload\-Options}}
+\index{\$autoload\-Options@{\$autoload\-Options}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$autoload\-Options}]{\setlength{\rightskip}{0pt plus 5cm}if (\$exclude\-Dirs\-Option-\/$>$value!==false) \$autoload\-Options = new ezp\-Autoload\-Generator\-Options()}}\label{ezpgenerateautoloads_8php_a11b2b8d92ed8fe93c2e53197e661142c}
+
+
+\-Definition at line 137 of file ezpgenerateautoloads.\-php.
+
+
+
+\-Referenced by extension$\backslash$ezadvancedautoload$\backslash$classes$\backslash$helpers$\backslash$template\-Autoload\-Generator\-Helper$\backslash$regenerate\-Extension(), extension$\backslash$ezadvancedautoload$\backslash$classes$\backslash$helpers$\backslash$template\-Autoload\-Generator\-Helper$\backslash$regenerate\-Kernel(), extension$\backslash$ezadvancedautoload$\backslash$classes$\backslash$helpers$\backslash$template\-Autoload\-Generator\-Helper$\backslash$regenerate\-Kernel\-Override(), and extension$\backslash$ezadvancedautoload$\backslash$classes$\backslash$helpers$\backslash$template\-Autoload\-Generator\-Helper$\backslash$regenerate\-Test().
+
+\hypertarget{ezpgenerateautoloads_8php_a407bf0b4ef42d32212f29ac7c8e8a96e}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$display\-Progress\-Option@{\$display\-Progress\-Option}}
+\index{\$display\-Progress\-Option@{\$display\-Progress\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$display\-Progress\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$display\-Progress\-Option = new ezc\-Console\-Option( 'p', 'progress', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )}}\label{ezpgenerateautoloads_8php_a407bf0b4ef42d32212f29ac7c8e8a96e}
+
+
+\-Definition at line 99 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a2157a552be64e9a75918a23fef9e26e7}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$dryrun\-Option@{\$dryrun\-Option}}
+\index{\$dryrun\-Option@{\$dryrun\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$dryrun\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$dryrun\-Option = new ezc\-Console\-Option( 'n', 'dry-\/run', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )}}\label{ezpgenerateautoloads_8php_a2157a552be64e9a75918a23fef9e26e7}
+
+
+\-Definition at line 69 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_ad444c7af1932b7a85e8351702c783790}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$exclude\-Dirs\-Option@{\$exclude\-Dirs\-Option}}
+\index{\$exclude\-Dirs\-Option@{\$exclude\-Dirs\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$exclude\-Dirs\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$exclude\-Dirs\-Option = new ezc\-Console\-Option( '', 'exclude', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G )}}\label{ezpgenerateautoloads_8php_ad444c7af1932b7a85e8351702c783790}
+
+
+\-Definition at line 94 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a35b967cec5da82cfa9989e036ad50642}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$extension\-Files\-Option@{\$extension\-Files\-Option}}
+\index{\$extension\-Files\-Option@{\$extension\-Files\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$extension\-Files\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$extension\-Files\-Option = new ezc\-Console\-Option( 'e', 'extension', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )}}\label{ezpgenerateautoloads_8php_a35b967cec5da82cfa9989e036ad50642}
+
+
+\-Definition at line 84 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a785ce4531ef75b21040c99c8cbce7aa4}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$help\-Option@{\$help\-Option}}
+\index{\$help\-Option@{\$help\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$help\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$help\-Option = new ezc\-Console\-Option( 'h', 'help' )}}\label{ezpgenerateautoloads_8php_a785ce4531ef75b21040c99c8cbce7aa4}
+
+
+\-Definition at line 54 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a7e74e8adf0bd544754962f4ddd4fc35b}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$kernel\-Files\-Option@{\$kernel\-Files\-Option}}
+\index{\$kernel\-Files\-Option@{\$kernel\-Files\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$kernel\-Files\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$kernel\-Files\-Option = new ezc\-Console\-Option( 'k', 'kernel', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )}}\label{ezpgenerateautoloads_8php_a7e74e8adf0bd544754962f4ddd4fc35b}
+
+
+\-Definition at line 74 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a67e31a42e7cb071e5c02df2261d6594a}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$kernel\-Override\-Option@{\$kernel\-Override\-Option}}
+\index{\$kernel\-Override\-Option@{\$kernel\-Override\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$kernel\-Override\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$kernel\-Override\-Option = new ezc\-Console\-Option( 'o', 'kernel-\/override', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )}}\label{ezpgenerateautoloads_8php_a67e31a42e7cb071e5c02df2261d6594a}
+
+
+\-Definition at line 79 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_afe68e6fbe7acfbffc0af0c84a1996466}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$params@{\$params}}
+\index{\$params@{\$params}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$params}]{\setlength{\rightskip}{0pt plus 5cm}\$params = new ezc\-Console\-Input()}}\label{ezpgenerateautoloads_8php_afe68e6fbe7acfbffc0af0c84a1996466}
+
+
+\-Definition at line 52 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a6b7b596c6eccab7f3c39bbcad2d711a0}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$target\-Option@{\$target\-Option}}
+\index{\$target\-Option@{\$target\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$target\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$target\-Option = new ezc\-Console\-Option( 't', 'target', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G )}}\label{ezpgenerateautoloads_8php_a6b7b596c6eccab7f3c39bbcad2d711a0}
+
+
+\-Definition at line 59 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a42bc54b597a301809a0bdbec1c8f1ee6}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$test\-Files\-Option@{\$test\-Files\-Option}}
+\index{\$test\-Files\-Option@{\$test\-Files\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$test\-Files\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$test\-Files\-Option = new ezc\-Console\-Option( 's', 'tests', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )}}\label{ezpgenerateautoloads_8php_a42bc54b597a301809a0bdbec1c8f1ee6}
+
+
+\-Definition at line 89 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_abdb1c04b56bd870d8c95d438c1a3ceb7}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$use\-Bundled\-Components@{\$use\-Bundled\-Components}}
+\index{\$use\-Bundled\-Components@{\$use\-Bundled\-Components}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$use\-Bundled\-Components}]{\setlength{\rightskip}{0pt plus 5cm}if (file\-\_\-exists('config.\-php')) \$use\-Bundled\-Components = defined( '\-E\-Z\-P\-\_\-\-U\-S\-E\-\_\-\-B\-U\-N\-D\-L\-E\-D\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-S' ) ? \-E\-Z\-P\-\_\-\-U\-S\-E\-\_\-\-B\-U\-N\-D\-L\-E\-D\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-S === true \-: file\-\_\-exists( 'lib/ezc' )}}\label{ezpgenerateautoloads_8php_abdb1c04b56bd870d8c95d438c1a3ceb7}
+\-Script replacement in order to regenerate autoload with ezadvancedautoload extension. \-Script base on \hyperlink{ezpgenerateautoloads_8php}{ezpgenerateautoloads.\-php} script for e\-Z\-Publish community version 2012.\-2
+
+\begin{DoxyAuthor}{\-Author}
+\-Adrien \-Loyant $<$\href{mailto:adrien.loyant@te-laval.fr}{\tt adrien.\-loyant@te-\/laval.\-fr}$>$
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+2012-\/03-\/01 
+\end{DoxyDate}
+\begin{DoxyVersion}{\-Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+\begin{DoxySince}{\-Since}
+1.\-0.\-0 
+\end{DoxySince}
+\begin{DoxyCopyright}{\-Copyright}
+\-G\-N\-U \-Public \-License v.\-2 
+\end{DoxyCopyright}
+
+
+\-Definition at line 22 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a22133d0c8998aa2d18623686cca5faa4}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!\$verbose\-Option@{\$verbose\-Option}}
+\index{\$verbose\-Option@{\$verbose\-Option}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{\$verbose\-Option}]{\setlength{\rightskip}{0pt plus 5cm}\$verbose\-Option = new ezc\-Console\-Option( 'v', 'verbose', ezc\-Console\-Input\-::\-T\-Y\-P\-E\-\_\-\-N\-O\-N\-E )}}\label{ezpgenerateautoloads_8php_a22133d0c8998aa2d18623686cca5faa4}
+
+
+\-Definition at line 64 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_ab9a0a1710f335bc48a13e8a94802be23}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!argument\-Definition@{argument\-Definition}}
+\index{argument\-Definition@{argument\-Definition}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{argument\-Definition}]{\setlength{\rightskip}{0pt plus 5cm}\$params {\bf argument\-Definition} = new ezc\-Console\-Arguments()}}\label{ezpgenerateautoloads_8php_ab9a0a1710f335bc48a13e8a94802be23}
+
+
+\-Definition at line 105 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_aed0ba19f5204d9659e823271642a6594}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!argument\-Definition@{argument\-Definition}}
+\index{argument\-Definition@{argument\-Definition}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{argument\-Definition}]{\setlength{\rightskip}{0pt plus 5cm}\$params {\bf argument\-Definition}\mbox{[}0\mbox{]} = new ezc\-Console\-Argument( 'extension' )}}\label{ezpgenerateautoloads_8php_aed0ba19f5204d9659e823271642a6594}
+
+
+\-Definition at line 107 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a29816a8455ff45c83cd2e389735c8207}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!base\-Path@{base\-Path}}
+\index{base\-Path@{base\-Path}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{base\-Path}]{\setlength{\rightskip}{0pt plus 5cm}\$autoload\-Options {\bf base\-Path} = \$params-\/$>${\bf argument\-Definition}\mbox{[}'extension'\mbox{]}-\/$>$value}}\label{ezpgenerateautoloads_8php_a29816a8455ff45c83cd2e389735c8207}
+
+
+\-Definition at line 139 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a7cbde127000429b4c1ee76be227eca44}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!default@{default}}
+\index{default@{default}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{default}]{\setlength{\rightskip}{0pt plus 5cm}\$params {\bf argument\-Definition} \mbox{[}0\mbox{]} {\bf default} = getcwd()}}\label{ezpgenerateautoloads_8php_a7cbde127000429b4c1ee76be227eca44}
+
+
+\-Definition at line 110 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_aa79f55582aba2bd3eff4d3fa4b980a84}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!display\-Progress@{display\-Progress}}
+\index{display\-Progress@{display\-Progress}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{display\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}\$autoload\-Options {\bf display\-Progress} = \$display\-Progress\-Option-\/$>$value}}\label{ezpgenerateautoloads_8php_aa79f55582aba2bd3eff4d3fa4b980a84}
+
+
+\-Definition at line 145 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a52217447e9aa7d329a16ea69370b42a4}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!exclude\-Dirs@{exclude\-Dirs}}
+\index{exclude\-Dirs@{exclude\-Dirs}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{exclude\-Dirs}]{\setlength{\rightskip}{0pt plus 5cm}if (!empty(\$target\-Option-\/$>$value)) \$autoload\-Options {\bf exclude\-Dirs} = \${\bf exclude\-Dirs}}}\label{ezpgenerateautoloads_8php_a52217447e9aa7d329a16ea69370b42a4}
+
+
+\-Definition at line 151 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_ac38115d855b4d48735ec865ab62bf1fe}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!mandatory@{mandatory}}
+\index{mandatory@{mandatory}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{mandatory}]{\setlength{\rightskip}{0pt plus 5cm}\$display\-Progress\-Option {\bf mandatory} = false}}\label{ezpgenerateautoloads_8php_ac38115d855b4d48735ec865ab62bf1fe}
+
+
+\-Definition at line 55 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_ae648f5335e57fa264ffaaf9d2fe4c61b}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!search\-Extension\-Files@{search\-Extension\-Files}}
+\index{search\-Extension\-Files@{search\-Extension\-Files}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{search\-Extension\-Files}]{\setlength{\rightskip}{0pt plus 5cm}\$autoload\-Options {\bf search\-Extension\-Files} = \$extension\-Files\-Option-\/$>$value}}\label{ezpgenerateautoloads_8php_ae648f5335e57fa264ffaaf9d2fe4c61b}
+
+
+\-Definition at line 142 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_aab46cc9fff71273094aafac8ebd689d4}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!search\-Kernel\-Files@{search\-Kernel\-Files}}
+\index{search\-Kernel\-Files@{search\-Kernel\-Files}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{search\-Kernel\-Files}]{\setlength{\rightskip}{0pt plus 5cm}\$autoload\-Options {\bf search\-Kernel\-Files} = \$kernel\-Files\-Option-\/$>$value}}\label{ezpgenerateautoloads_8php_aab46cc9fff71273094aafac8ebd689d4}
+
+
+\-Definition at line 140 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_af86b9a19664645803f32b4d5bb872ff1}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!search\-Kernel\-Override@{search\-Kernel\-Override}}
+\index{search\-Kernel\-Override@{search\-Kernel\-Override}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{search\-Kernel\-Override}]{\setlength{\rightskip}{0pt plus 5cm}\$autoload\-Options {\bf search\-Kernel\-Override} = \$kernel\-Override\-Option-\/$>$value}}\label{ezpgenerateautoloads_8php_af86b9a19664645803f32b4d5bb872ff1}
+
+
+\-Definition at line 141 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a3727c480754aa7c8b3dc7e8070ed1eb4}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!search\-Test\-Files@{search\-Test\-Files}}
+\index{search\-Test\-Files@{search\-Test\-Files}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{search\-Test\-Files}]{\setlength{\rightskip}{0pt plus 5cm}\$autoload\-Options {\bf search\-Test\-Files} = \$test\-Files\-Option-\/$>$value}}\label{ezpgenerateautoloads_8php_a3727c480754aa7c8b3dc7e8070ed1eb4}
+
+
+\-Definition at line 143 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a6878132bff242d248a03a92df0ead036}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!shorthelp@{shorthelp}}
+\index{shorthelp@{shorthelp}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{shorthelp}]{\setlength{\rightskip}{0pt plus 5cm}\$display\-Progress\-Option {\bf shorthelp} = '\-Show help information'}}\label{ezpgenerateautoloads_8php_a6878132bff242d248a03a92df0ead036}
+
+
+\-Definition at line 56 of file ezpgenerateautoloads.\-php.
+
+\hypertarget{ezpgenerateautoloads_8php_a210f8683b204a76199152312e3d9a177}{\index{ezpgenerateautoloads.\-php@{ezpgenerateautoloads.\-php}!write\-Files@{write\-Files}}
+\index{write\-Files@{write\-Files}!ezpgenerateautoloads.php@{ezpgenerateautoloads.\-php}}
+\subsubsection[{write\-Files}]{\setlength{\rightskip}{0pt plus 5cm}\$autoload\-Options {\bf write\-Files} = !\$dryrun\-Option-\/$>$value}}\label{ezpgenerateautoloads_8php_a210f8683b204a76199152312e3d9a177}
+
+
+\-Definition at line 144 of file ezpgenerateautoloads.\-php.
+

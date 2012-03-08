@@ -1,0 +1,70 @@
+.TH "D:/git/ezadvancedautoload/modules/ezadvancedautoload/module.php" 3 "Thu Mar 8 2012" "Version 1.0.0-RC" "eZ Advanced Autoload" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/git/ezadvancedautoload/modules/ezadvancedautoload/module.php \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB$Module\fP"
+.br
+.ti -1c
+.RI "\fB$ViewList\fP = array()"
+.br
+.ti -1c
+.RI "\fB$ViewList\fP ['extensions']"
+.br
+.ti -1c
+.RI "\fB$FunctionList\fP = array()"
+.br
+.ti -1c
+.RI "\fB$FunctionList\fP ['extensions'] = array()"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "$FunctionList = array()"
+.PP
+Definition at line 23 of file module\&.php\&.
+.SS "$FunctionList['extensions'] = array()"
+.PP
+Definition at line 24 of file module\&.php\&.
+.SS "$Module"\fBInitial value:\fP
+.PP
+.nf
+ array(
+                                        'name' => 'ezadvancedautoload',
+                                        'variable_params' => false,
+                                        'ui_component_match' => 'module',
+                                        'function' => array()
+)
+.fi
+.PP
+Definition at line 3 of file module\&.php\&.
+.SS "$ViewList = array()"
+.PP
+Definition at line 10 of file module\&.php\&.
+.SS "$ViewList['extensions']"\fBInitial value:\fP
+.PP
+.nf
+ array(
+                                                                        'script' => 'extensions\&.php',
+                                                                        'functions' => array('extensions'),
+                                                                        'params' => array(),
+                                                                        'single_post_actions' => array( 
+                                                                                                                'ActivateExtensionsButton' => 'ActivateExtensions',
+                                                                                                                'GenerateAutoloadArraysButton' => 'GenerateAutoloadArrays',
+                                                                                                                'GenerateAutoloadOverrideArraysButton' => 'GenerateAutoloadOverrideArrays'
+                                                                                        ),
+                                                                        'unordered_params' => array()
+)
+.fi
+.PP
+Definition at line 11 of file module\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for eZ Advanced Autoload from the source code\&.

@@ -72,8 +72,8 @@
 	                <input class="button" 
 	                       type="submit" 
 	                       name="GenerateAutoloadOverrideArraysButton" 
-	                       value="{'Regenerate autoload arrays for extensions -override'|i18n( 'design/admin/setup/extensions' )}" 
-	                       title="{'Click this button to regenerate the autoload arrays used by the system for extensions and overrides.'|i18n( 'design/admin/setup/extensions' )}" />
+	                       value="{'Regenerate autoload arrays for extensions -override'|i18n( 'design/ezadvancedautoload/setup/extensions' )}" 
+	                       title="{'Click this button to regenerate the autoload arrays used by the system for extensions and overrides.'|i18n( 'design/ezadvancedautoload/setup/extensions' )}" />
 	            </div>
 	        </div>
 	    </div>
@@ -82,4 +82,7 @@
     </div>
 </form>
 
-{ezscript_require(array( 'udpdatebuttonstyle.js' ) )}
+{def $authorized_lib = array( 'jquery' )}{* TODO: Manage authorized lib with file parsing helper in futur *}
+{def $preferred_lib = ezini('eZJSCore', 'PreferredLibrary', 'ezjscore.ini')}{if $authorized_lib|contains( $preferred_lib )|not()}{set $preferred_lib = 'jquery'}{/if}
+{ezscript_require( array( concat( 'ezjsc::', $preferred_lib ), concat( 'ezjsc::', $preferred_lib, 'io' ), concat( 'updatebuttonstyle_', $preferred_lib, '.js' ) ) )}
+{undef $authorized_lib $preferred_lib}

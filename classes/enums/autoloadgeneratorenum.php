@@ -1,9 +1,12 @@
 <?php
-namespace extension\ezadvancedautoload\enums {
+namespace extension\ezadvancedautoload\classes\enums {
 
 	/**
 	 * @brief Enumeration class for autoload generator
 	 * @details Classe witch define all enumeration use for build autoload
+	 * This class will need to extends <a href="http://php.net/manual/fr/book.spl-types.php">SplEnum</a> soon
+	 * It's a final class because there is no need to extends it; 
+	 * It should manage all available parameter for autoload generation with eZPublish
 	 * 
 	 * @author Adrien Loyant <adrien.loyant@te-laval.fr>
 	 * 
@@ -12,9 +15,16 @@ namespace extension\ezadvancedautoload\enums {
 	 * @since 1.0.0
 	 * @copyright GNU Public License v.2
 	 * 
-	 * @package extension\ezadvancedautoload\enums
+	 * @package extension\ezadvancedautoload\classes\enums
 	 */
 	final class autoloadGeneratorEnum {
+		
+		/**
+		 * @brief default value
+		 * @details this is the default value of this enumeration
+		 * @var int
+		 */
+		const __default = self::EXTENSION;
 		
 		/**
 		 * @brief Kernel constant enumeration

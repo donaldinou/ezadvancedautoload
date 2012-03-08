@@ -1,0 +1,80 @@
+.TH "D:/git/ezadvancedautoload/modules/ezadvancedautoload/extensions.php" 3 "Thu Mar 8 2012" "Version 1.0.0-RC" "eZ Advanced Autoload" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/git/ezadvancedautoload/modules/ezadvancedautoload/extensions.php \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB$http\fP = \\eZHTTPTool::instance()"
+.br
+.ti -1c
+.RI "\fB$tpl\fP = \\eZTemplate::factory()"
+.br
+.ti -1c
+.RI "\fB$module\fP = $Params['Module']"
+.br
+.ti -1c
+.RI "\fB$extensionDir\fP = \\eZExtension::baseDirectory()"
+.br
+.ti -1c
+.RI "\fB$availableExtensionArray\fP = \\eZDir::findSubItems($extensionDir, 'dl')"
+.br
+.ti -1c
+.RI "\fB$selectedExtensions\fP = \\eZExtension::activeExtensions()"
+.br
+.ti -1c
+.RI "\fB$Result\fP = array()"
+.br
+.ti -1c
+.RI "\fB$Result\fP ['content'] = $tpl->fetch('design:setup/extensions\&.tpl')"
+.br
+.ti -1c
+.RI "\fB$Result\fP ['path']"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "$availableExtensionArray = \\eZDir::findSubItems($extensionDir, 'dl')"
+.PP
+Definition at line 9 of file extensions\&.php\&.
+.SS "$extensionDir = \\eZExtension::baseDirectory()"
+.PP
+Definition at line 8 of file extensions\&.php\&.
+.SS "$http = \\eZHTTPTool::instance()"
+.PP
+Definition at line 4 of file extensions\&.php\&.
+.SS "$module = $Params['Module']"
+.PP
+Definition at line 6 of file extensions\&.php\&.
+.SS "$Result = array()"
+.PP
+Definition at line 67 of file extensions\&.php\&.
+.SS "$Result['content'] = $tpl->fetch('design:setup/extensions\&.tpl')"
+.PP
+Definition at line 68 of file extensions\&.php\&.
+.SS "$Result['path']"\fBInitial value:\fP
+.PP
+.nf
+ array(
+                        array(
+                            'url' => false,
+                            'text' => ezpI18n::tr('kernel/setup', 'Extension configuration')
+                        )
+                )
+.fi
+.PP
+Definition at line 69 of file extensions\&.php\&.
+.SS "$selectedExtensions = \\eZExtension::activeExtensions()"
+.PP
+Definition at line 10 of file extensions\&.php\&.
+.SS "$tpl = \\eZTemplate::factory()"
+.PP
+Definition at line 5 of file extensions\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for eZ Advanced Autoload from the source code\&.

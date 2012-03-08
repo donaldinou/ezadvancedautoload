@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<software>
+<software xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		  xsi:noNamespaceSchemaLocation="xml/xsd/extension.xsd">
     <metadata>
         <name>eZ Advanced Autoloads</name>
         <version>1.0.0</version>
@@ -8,6 +9,8 @@
         <info_url>http://www.technology-everywhere.fr</info_url>
     </metadata>
     <dependencies>
-        <use>ezjscore</use>
+        <uses>
+        	<extension name="ezjscore" />
+        </uses>
     </dependencies>
 </software>

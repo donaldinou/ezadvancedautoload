@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.0">
     <context>
-        <name>design/admin/setup/extensions</name>
+        <name>design/ezadvancedautoload/setup/extensions</name>
         <message>
             <source>Regenerate autoload arrays for extensions -override</source>
             <translation type="unfinished">Regenerate autoload arrays for extensions and kernel overrides</translation>
