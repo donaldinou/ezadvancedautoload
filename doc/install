@@ -27,6 +27,10 @@ eZ Publish installation.
 
     [ExtensionSettings]
     ActiveExtensions[]=ezadvancedautoload
+    
+    You can also active this extension for a specific siteaccess
+    [ExtensionSettings]
+    ActiveAccessExtensions[]=ezadvancedautoload
 
 Note (For both case): 
 In order to override admin/admin2 design folder, be sure to preprend 

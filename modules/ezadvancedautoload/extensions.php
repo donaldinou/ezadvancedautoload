@@ -1,5 +1,11 @@
 <?php
-use extension\ezadvancedautoload\helpers\templateAutoloadGeneratorHelper as autoloadHelper;
+// Start requiring classes. Needed if it's first autoload run
+if (!class_exists('extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper')) {
+	require_once('extension/ezadvancedautoload/classes/helpers/templateautoloadgeneratorhelper.php');
+}
+// End
+
+use extension\ezadvancedautoload\classes\helpers\templateAutoloadGeneratorHelper as autoloadHelper;
 
 $http = \eZHTTPTool::instance();
 $tpl = \eZTemplate::factory();
@@ -48,7 +54,6 @@ if($module->isCurrentAction('ActivateExtensions')) {
     }
 
     autoloadHelper::regenerateExtension($tpl);
-    
 }
 
 // Regenerate autoload extensions

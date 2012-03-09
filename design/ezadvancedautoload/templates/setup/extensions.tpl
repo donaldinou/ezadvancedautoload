@@ -1,4 +1,4 @@
-{include uri='design:parts/setup/menu.tpl'}
+{include uri='design:parts/setup/warning_messages.tpl'}
 
 <form name="extensionform" method="post" action="{'/ezadvancedautoload/extensions'|ezurl('no')}">
     <div class="context-block">
@@ -19,23 +19,23 @@
 	            <table class="list" cellspacing="0">
 		            <tr>
 		                <th class="tight">
-		                    <img src={'toggle-button-16x16.gif'|ezimage} 
+		                    <img src="{'toggle-button-16x16.gif'|ezimage('no')}" 
 		                         alt="{'Invert selection.'|i18n( 'design/admin/setup/extensions' )}" 
 		                         title="{'Toggle all.'|i18n( 'design/admin/content/translations' )}" 
 		                         onclick="ezjs_toggleCheckboxes( document.extensionform, 'ActiveExtensionList[]' ); return false;"/>
 		                </th>
 		                <th>{'Name'|i18n( 'design/admin/setup/extensions' )}</th>
 		            </tr>
-		            {foreach $available_extension_array as $Extensions sequence=array( bglight, bgdark )}
-		                <tr class="{$Extensions.sequence}">
+		            {foreach $available_extension_array as $extension sequence array( 'bglight', 'bgdark' ) as $style}
+		                <tr class="{$style}">
 		                    <td>
 		                       <input type="checkbox" 
 		                              name="ActiveExtensionList[]" 
-		                              value="{$Extensions.item}" 
-		                              {if $selected_extension_array|contains($Extensions.item)}checked="checked"{/if} 
+		                              value="{$extension}" 
+		                              {if and( is_set($selected_extension_array), $selected_extension_array|contains($extension) )}checked="checked"{/if} 
 		                              title="{'Activate or deactivate extension. Use the "Update" button to apply the changes.'|i18n( 'design/admin/setup/extensions' )|wash}" />
 		                    </td>
-		                    <td>{$Extensions.item}</td>
+		                    <td>{$extension}</td>
 		                </tr>
 		            {/foreach}
 		        </table>
@@ -86,3 +86,6 @@
 {def $preferred_lib = ezini('eZJSCore', 'PreferredLibrary', 'ezjscore.ini')}{if $authorized_lib|contains( $preferred_lib )|not()}{set $preferred_lib = 'jquery'}{/if}
 {ezscript_require( array( concat( 'ezjsc::', $preferred_lib ), concat( 'ezjsc::', $preferred_lib, 'io' ), concat( 'updatebuttonstyle_', $preferred_lib, '.js' ) ) )}
 {undef $authorized_lib $preferred_lib}
+
+{if is_set($available_extension_array)}{undef $available_extension_array}{/if}
+{if is_set($selected_extension_array)}{undef $selected_extension_array}{/if}

@@ -15,6 +15,7 @@ namespace extension\ezadvancedautoload\pv\classes {
 	 * 
 	 * @package extension\ezadvancedautoload\pv\classes
 	 * @see \eZAutoloadGenerator
+	 * 
 	 */
 	class eZAutoloadGenerator extends \eZAutoloadGenerator {
 		
@@ -47,7 +48,8 @@ namespace extension\ezadvancedautoload\pv\classes {
 		 * @param array $extraFilter
 		 * @return array
 		 */
-		protected function buildFileList( $path, array $extraFilter = null ) {
+		// FIXME because of parent definition we cannot force $extraFilter param to be an array
+		protected function buildFileList( $path, $extraFilter = null ) {
 			if (static::isFinerFilterEnabled()) {
 				$dirSep = preg_quote( DIRECTORY_SEPARATOR );
 				$exclusionFilter = array( "@^{$path}{$dirSep}(var|settings|benchmarks|bin|autoload|port_info|update|templates|tmp|UnitTest|lib{$dirSep}ezc){$dirSep}@" );
@@ -156,7 +158,8 @@ namespace extension\ezadvancedautoload\pv\classes {
 		 * @param int $generatingMode The mode we are generating for autoloads for.
 		 * @return boolean
 		 */
-		protected function classExistsInArray( $class, $checkMode, $file, array $inProgressAutoloadArray = null, $generatingMode = null ) {
+		// FIXME because of parent definition we cannot force $inProgressAutoloadArray param to be an array
+		protected function classExistsInArray( $class, $checkMode, $file, $inProgressAutoloadArray = null, $generatingMode = null ) {
 			$result = false;
 			
 			if (static::isFinerFilterEnabled()) {
@@ -170,6 +173,7 @@ namespace extension\ezadvancedautoload\pv\classes {
 				$classCollision = array_key_exists( $class, $arrayToCheck );
 				
 				if ($classCollision) {
+					$fileExtensionName = static::getExtensionName($file);
 					$collisionExtensionName = static::getExtensionName($inProgressAutoloadArray[$class]);
 					$activeExtensionsReverse = array_flip($this->activeExtensions);
 					

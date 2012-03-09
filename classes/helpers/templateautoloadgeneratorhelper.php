@@ -1,6 +1,21 @@
 <?php 
 namespace extension\ezadvancedautoload\classes\helpers {
 	
+	// Start requiring classes. Needed if it's first autoload run
+	if (!class_exists('extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator')) {
+		require_once('extension/ezadvancedautoload/private/classes/ezautoloadgenerator.php');
+	}
+	if (!class_exists('extension\\ezadvancedautoload\\classes\\enums\\autoloadGeneratorEnum')) {
+		require_once('extension/ezadvancedautoload/classes/enums/autoloadgeneratorenum.php');
+	}
+	if (!class_exists('extension\\ezadvancedautoload\\classes\\exceptions\\unexpectedModeException')) {
+		require_once('extension/ezadvancedautoload/classes/exceptions/unexpectedModeException.php');
+	}
+	if (!class_exists('extension\\ezadvancedautoload\\classes\\helpers\\Helper')) {
+		require_once('extension/ezadvancedautoload/classes/helpers/helper.php');
+	}
+	// End
+	
 	use extension\ezadvancedautoload\pv\classes\eZAutoloadGenerator; // FIXME: private is a reserved keyword
 	use extension\ezadvancedautoload\classes\enums\autoloadGeneratorEnum;
 	use extension\ezadvancedautoload\classes\exceptions\unexpectedModeException;
@@ -143,12 +158,12 @@ namespace extension\ezadvancedautoload\classes\helpers {
 					
 				$messages = $autoloadGenerator->getMessages();
 				foreach($messages as $message) {
-					eZDebug::writeNotice($message, 'eZAutoloadGenerator');
+					\eZDebug::writeNotice($message, 'eZAutoloadGenerator');
 				}
 					
 				$warnings = $autoloadGenerator->getWarnings();
 				foreach ($warnings as &$warning) {
-					eZDebug::writeWarning($warning, 'eZAutoloadGenerator');
+					\eZDebug::writeWarning($warning, 'eZAutoloadGenerator');
 						
 					// For web output we want to mark some of the important parts of
 					// the message
@@ -165,7 +180,7 @@ namespace extension\ezadvancedautoload\classes\helpers {
 				}
 			}
 			catch (Exception $e) {
-				eZDebug::writeError($e->getMessage());
+				\eZDebug::writeError($e->getMessage());
 			}
 		}
 	

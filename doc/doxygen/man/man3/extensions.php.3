@@ -10,7 +10,7 @@ C:/Users/aloyant/ezadvancedautoload/modules/ezadvancedautoload/extensions.php \-
 
 .in +1c
 .ti -1c
-.RI "\fB$http\fP = \\eZHTTPTool::instance()"
+.RI "if(!class_exists('extension\\\\ezadvancedautoload\\\\classes\\\\helpers\\\\templateAutoloadGeneratorHelper')) \fB$http\fP = \\eZHTTPTool::instance()"
 .br
 .ti -1c
 .RI "\fB$tpl\fP = \\eZTemplate::factory()"
@@ -42,27 +42,27 @@ C:/Users/aloyant/ezadvancedautoload/modules/ezadvancedautoload/extensions.php \-
 .SS "$availableExtensionArray = \\eZDir::findSubItems($extensionDir, 'dl')"
 
 .PP
-Definition at line 9 of file extensions\&.php\&.
+Definition at line 15 of file extensions\&.php\&.
 .SS "$extensionDir = \\eZExtension::baseDirectory()"
 
 .PP
-Definition at line 8 of file extensions\&.php\&.
-.SS "$http = \\eZHTTPTool::instance()"
+Definition at line 14 of file extensions\&.php\&.
+.SS "if (!class_exists('extension\\\\ezadvancedautoload\\\\classes\\\\helpers\\\\templateAutoloadGeneratorHelper')) $http = \\eZHTTPTool::instance()"
 
 .PP
-Definition at line 4 of file extensions\&.php\&.
+Definition at line 10 of file extensions\&.php\&.
 .SS "$module = $Params['Module']"
 
 .PP
-Definition at line 6 of file extensions\&.php\&.
+Definition at line 12 of file extensions\&.php\&.
 .SS "$Result = array()"
 
 .PP
-Definition at line 67 of file extensions\&.php\&.
+Definition at line 72 of file extensions\&.php\&.
 .SS "$Result['content'] = $tpl->fetch('design:setup/extensions\&.tpl')"
 
 .PP
-Definition at line 68 of file extensions\&.php\&.
+Definition at line 73 of file extensions\&.php\&.
 .SS "$Result['path']"
 \fBInitial value:\fP
 .PP
@@ -75,15 +75,15 @@ Definition at line 68 of file extensions\&.php\&.
                 )
 .fi
 .PP
-Definition at line 69 of file extensions\&.php\&.
+Definition at line 74 of file extensions\&.php\&.
 .SS "$selectedExtensions = \\eZExtension::activeExtensions()"
 
 .PP
-Definition at line 10 of file extensions\&.php\&.
+Definition at line 16 of file extensions\&.php\&.
 .SS "$tpl = \\eZTemplate::factory()"
 
 .PP
-Definition at line 5 of file extensions\&.php\&.
+Definition at line 11 of file extensions\&.php\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for eZ Advanced Autoload from the source code\&.

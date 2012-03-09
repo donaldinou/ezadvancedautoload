@@ -39,7 +39,7 @@ else
 
 spl_autoload_register( array( 'ezcBase', 'autoload' ) );
 
-require 'extension/ezadvancedautoload/classes/ezautoloadgenerator.php';
+require 'extension/ezadvancedautoload/pv/classes/eZAutoloadGeneratorezautoloadgenerator.php';
 require 'kernel/private/interfaces/ezpautoloadoutput.php';
 require 'kernel/private/classes/ezpautoloadclioutput.php';
 require 'kernel/private/options/ezpautoloadgeneratoroptions.php';
@@ -150,7 +150,7 @@ if ( !empty( $targetOption->value ) )
 }
 $autoloadOptions->excludeDirs = $excludeDirs;
 
-$autoloadGenerator = new \extension\ezadvancedautoload\eZAutoloadGenerator( $autoloadOptions );
+$autoloadGenerator = new \extension\ezadvancedautoload\pv\classes\eZAutoloadGenerator( $autoloadOptions );
 
 if ( defined( 'EZP_AUTOLOAD_OUTPUT' ) )
 {
@@ -159,7 +159,7 @@ if ( defined( 'EZP_AUTOLOAD_OUTPUT' ) )
 }
 else
 {
-    $autoloadCliOutput = new ezpAutoloadCliOutput();
+    $autoloadCliOutput = new \ezpAutoloadCliOutput();
 }
 
 $autoloadGenerator->setOutputObject( $autoloadCliOutput );
