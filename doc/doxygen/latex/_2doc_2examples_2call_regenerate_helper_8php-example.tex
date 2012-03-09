@@ -1,0 +1,38 @@
+\hypertarget{_2doc_2examples_2call_regenerate_helper_8php-example}{\section{/doc/examples/call\-\_\-regenerate\-\_\-helper.\-php}
+}
+Regenerate autoload for defined options (mode) Regenerate autoload for for defined options (mode)
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$mode} & Type of regeneration. You can use $|$ (pipe) to define more than one type \\
+\hline
+$\backslash$e\-Z\-Template & {\em \$template} & the template to set the debug if we are in graphical mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em unexpected\-Mode\-Exception} & 
+\begin{DoxyCodeInclude}
+<?php 
+use extension\ezadvancedautoload\helpers\templateAutoloadGeneratorHelper as 
+      autoloadHelper;
+use extension\ezadvancedautoload\classes\exceptions\unexpectedModeException;
+
+$tpl = \eZTemplate::factory();
+try {
+    autoloadHelper::regenerate(eZAutoloadGenerator::KERNEL_OVERRIDE|
+      eZAutoloadGenerator::EXTENSION, $tpl);
+} catch (unexpectedModeException $ume) {
+    eZDebug::writeError($ume->getMessage());
+} catch (\Exception $e) {
+    eZDebug::writeError($e->getMessage());
+}
+
+?>
+\end{DoxyCodeInclude}
+ \\
+\hline
+\end{DoxyExceptions}

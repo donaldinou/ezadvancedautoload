@@ -29,7 +29,7 @@ namespace extension\ezadvancedautoload\classes\helpers {
 		 * @return void
 		 * @throws unexpectedModeException
 		 * 
-		 * @example templateAutoloadGeneratorHelper::regenerate(eZAutoloadGenerator::KERNEL_OVERRIDE|eZAutoloadGenerator::EXTENSION, null);
+		 * @example ./../../doc/examples/call_regenerate_helper.php
 		 */
 		public static function regenerate($mode, \eZTemplate $template = null ) {
 			if (is_int($mode)) {

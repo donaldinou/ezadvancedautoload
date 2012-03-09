@@ -1,8 +1,8 @@
-.TH "D:/git/ezadvancedautoload/modules/ezadvancedautoload/module.php" 3 "Thu Mar 8 2012" "Version 1.0.0-RC" "eZ Advanced Autoload" \" -*- nroff -*-
+.TH "C:/Users/aloyant/ezadvancedautoload/modules/ezadvancedautoload/module.php" 3 "Fri Mar 9 2012" "Version 1.0.0-RC" "eZ Advanced Autoload" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-D:/git/ezadvancedautoload/modules/ezadvancedautoload/module.php \- 
+C:/Users/aloyant/ezadvancedautoload/modules/ezadvancedautoload/module.php \- 
 .SH SYNOPSIS
 .br
 .PP
@@ -28,39 +28,44 @@ D:/git/ezadvancedautoload/modules/ezadvancedautoload/module.php \-
 .SH "Variable Documentation"
 .PP 
 .SS "$FunctionList = array()"
+
 .PP
 Definition at line 23 of file module\&.php\&.
 .SS "$FunctionList['extensions'] = array()"
+
 .PP
 Definition at line 24 of file module\&.php\&.
-.SS "$Module"\fBInitial value:\fP
+.SS "$Module"
+\fBInitial value:\fP
 .PP
 .nf
  array(
-                                        'name' => 'ezadvancedautoload',
-                                        'variable_params' => false,
-                                        'ui_component_match' => 'module',
-                                        'function' => array()
+                    'name' => 'ezadvancedautoload',
+                    'variable_params' => false,
+                    'ui_component_match' => 'module',
+                    'function' => array()
 )
 .fi
 .PP
 Definition at line 3 of file module\&.php\&.
 .SS "$ViewList = array()"
+
 .PP
 Definition at line 10 of file module\&.php\&.
-.SS "$ViewList['extensions']"\fBInitial value:\fP
+.SS "$ViewList['extensions']"
+\fBInitial value:\fP
 .PP
 .nf
  array(
-                                                                        'script' => 'extensions\&.php',
-                                                                        'functions' => array('extensions'),
-                                                                        'params' => array(),
-                                                                        'single_post_actions' => array( 
-                                                                                                                'ActivateExtensionsButton' => 'ActivateExtensions',
-                                                                                                                'GenerateAutoloadArraysButton' => 'GenerateAutoloadArrays',
-                                                                                                                'GenerateAutoloadOverrideArraysButton' => 'GenerateAutoloadOverrideArrays'
-                                                                                        ),
-                                                                        'unordered_params' => array()
+                                    'script' => 'extensions\&.php',
+                                    'functions' => array('extensions'),
+                                    'params' => array(),
+                                    'single_post_actions' => array( 
+                                                        'ActivateExtensionsButton' => 'ActivateExtensions',
+                                                        'GenerateAutoloadArraysButton' => 'GenerateAutoloadArrays',
+                                                        'GenerateAutoloadOverrideArraysButton' => 'GenerateAutoloadOverrideArrays'
+                                            ),
+                                    'unordered_params' => array()
 )
 .fi
 .PP

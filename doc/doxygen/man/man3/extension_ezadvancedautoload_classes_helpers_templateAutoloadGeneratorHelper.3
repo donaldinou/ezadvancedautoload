@@ -1,4 +1,4 @@
-.TH "extension\ezadvancedautoload\classes\helpers\templateAutoloadGeneratorHelper" 3 "Thu Mar 8 2012" "Version 1.0.0-RC" "eZ Advanced Autoload" \" -*- nroff -*-
+.TH "extension\ezadvancedautoload\classes\helpers\templateAutoloadGeneratorHelper" 3 "Fri Mar 9 2012" "Version 1.0.0-RC" "eZ Advanced Autoload" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -44,18 +44,18 @@ Inherits \fBextension\\ezadvancedautoload\\classes\\helpers\\Helper\fP\&.
 Definition at line 21 of file templateautoloadgeneratorhelper\&.php\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "static extension\\ezadvancedautoload\\classes\\helpers\\\fBtemplateAutoloadGeneratorHelper::regenerate\fP ($mode, \\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+.SS "static \fBextension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper::regenerate\fP ($mode, \\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+
 .PP
 Definition at line 34 of file templateautoloadgeneratorhelper\&.php\&.
-.PP
-References extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateExtension(), extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateKernel(), extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateKernelOverride(), and extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateTest()\&.
-.SS "static extension\\ezadvancedautoload\\classes\\helpers\\\fBtemplateAutoloadGeneratorHelper::regenerateExtension\fP (\\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+.SS "static \fBextension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper::regenerateExtension\fP (\\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+
 .PP
 Regenerate autoload for extension only (ezp_extension) Regenerate autoload for extension only (ezp_extension)
 .PP
 \fBParameters:\fP
 .RS 4
-\fI\\eZTemplate\fP $template the template to set the debug if we are in graphical mode 
+\fI$template\fP the template to set the debug if we are in graphical mode 
 .RE
 .PP
 \fBReturns:\fP
@@ -67,16 +67,15 @@ void
 .PP
 Definition at line 103 of file templateautoloadgeneratorhelper\&.php\&.
 .PP
-References $autoloadOptions, and extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\runGenerate()\&.
-.PP
-Referenced by extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerate()\&.
-.SS "static extension\\ezadvancedautoload\\classes\\helpers\\\fBtemplateAutoloadGeneratorHelper::regenerateKernel\fP (\\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+References $autoloadOptions\&.
+.SS "static \fBextension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper::regenerateKernel\fP (\\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+
 .PP
 Regenerate autoload for kernel only (ezp_kernel) Regenerate autoload for kernel only (ezp_kernel)
 .PP
 \fBParameters:\fP
 .RS 4
-\fI\\eZTemplate\fP $template the template to set the debug if we are in graphical mode 
+\fI$template\fP the template to set the debug if we are in graphical mode 
 .RE
 .PP
 \fBReturns:\fP
@@ -88,16 +87,15 @@ void
 .PP
 Definition at line 69 of file templateautoloadgeneratorhelper\&.php\&.
 .PP
-References $autoloadOptions, and extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\runGenerate()\&.
-.PP
-Referenced by extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerate()\&.
-.SS "static extension\\ezadvancedautoload\\classes\\helpers\\\fBtemplateAutoloadGeneratorHelper::regenerateKernelOverride\fP (\\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+References $autoloadOptions\&.
+.SS "static \fBextension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper::regenerateKernelOverride\fP (\\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+
 .PP
 Regenerate autoload for kernel override only (ezp_override) Regenerate autoload for kernel override only (ezp_override)
 .PP
 \fBParameters:\fP
 .RS 4
-\fI\\eZTemplate\fP $template the template to set the debug if we are in graphical mode 
+\fI$template\fP the template to set the debug if we are in graphical mode 
 .RE
 .PP
 \fBReturns:\fP
@@ -109,16 +107,15 @@ void
 .PP
 Definition at line 86 of file templateautoloadgeneratorhelper\&.php\&.
 .PP
-References $autoloadOptions, and extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\runGenerate()\&.
-.PP
-Referenced by extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerate()\&.
-.SS "static extension\\ezadvancedautoload\\classes\\helpers\\\fBtemplateAutoloadGeneratorHelper::regenerateTest\fP (\\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+References $autoloadOptions\&.
+.SS "static \fBextension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper::regenerateTest\fP (\\eZTemplate $template = \fCnull\fP)\fC [static]\fP"
+
 .PP
 Regenerate autoload for tests only (ezp_tests) Regenerate autoload for tests only (ezp_tests)
 .PP
 \fBParameters:\fP
 .RS 4
-\fI\\eZTemplate\fP $template the template to set the debug if we are in graphical mode 
+\fI$template\fP the template to set the debug if we are in graphical mode 
 .RE
 .PP
 \fBReturns:\fP
@@ -130,18 +127,17 @@ void
 .PP
 Definition at line 120 of file templateautoloadgeneratorhelper\&.php\&.
 .PP
-References $autoloadOptions, and extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\runGenerate()\&.
-.PP
-Referenced by extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerate()\&.
-.SS "static extension\\ezadvancedautoload\\classes\\helpers\\\fBtemplateAutoloadGeneratorHelper::runGenerate\fP (\\ezpAutoloadGeneratorOptions $autoloadOptions, \\eZTemplate $template = \fCnull\fP)\fC [static, private]\fP"
+References $autoloadOptions\&.
+.SS "static \fBextension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper::runGenerate\fP (\\ezpAutoloadGeneratorOptions $autoloadOptions, \\eZTemplate $template = \fCnull\fP)\fC [static, private]\fP"
+
 .PP
 launch the regeneration launch the regeneration
 .PP
 \fBParameters:\fP
 .RS 4
-\fI\\ezpAutoloadGeneratorOptions\fP $autoloadOptions the options to generate autoload 
+\fI$autoloadOptions\fP the options to generate autoload 
 .br
-\fI\\eZTemplate\fP $template the template to set the debug if we are in graphical mode 
+\fI$template\fP the template to set the debug if we are in graphical mode 
 .RE
 .PP
 \fBReturns:\fP
@@ -154,8 +150,6 @@ void
 Definition at line 138 of file templateautoloadgeneratorhelper\&.php\&.
 .PP
 References $autoloadGenerator\&.
-.PP
-Referenced by extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateExtension(), extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateKernel(), extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateKernelOverride(), and extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper\\regenerateTest()\&.
 
 .SH "Author"
 .PP 

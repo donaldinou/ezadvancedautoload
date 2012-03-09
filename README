@@ -16,7 +16,7 @@ _________________________________________________________________________
 
 About eZ Advanced Autoload
 ========================================================================
-  This extension provides management for ezpublish classes.
+  This extension provides autoload management for ezpublish classes.
 You could generate kernel-override and extension autoload via BackOffice.
 There is also an improvement of autoload array built, witch only get php
 files from active extension and permit extension-kernel-override based 
