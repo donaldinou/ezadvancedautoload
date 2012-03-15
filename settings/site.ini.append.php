@@ -3,8 +3,8 @@
 [RegionalSettings]
 TranslationExtensions[]=ezadvancedautoload
 
-[TemplateSettings]
-ExtensionAutoloadPath[]=ezadvancedautoload
+#[TemplateSettings]
+#ExtensionAutoloadPath[]=ezadvancedautoload
 
 [DesignSettings]
 AdditionalSiteDesignList[]=ezadvancedautoload
