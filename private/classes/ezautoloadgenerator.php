@@ -2,6 +2,18 @@
 // FIXME : private is a reserved keyword
 namespace extension\ezadvancedautoload\pv\classes {
 	
+    // Start requiring classes. Needed if it's first autoload run
+    if (!class_exists('\\eZAutoloadGenerator')) {
+        require_once('kernel/private/classes/ezautoloadgenerator.php');
+    }
+    if (!class_exists('\\eZExtension')) {
+        require_once('lib/ezutils/classes/ezextension.php');
+    }
+    if (!class_exists('\\eZINI')) {
+        require_once('lib/ezutils/classes/ezini.php');
+    }
+    //
+    
 	/**
 	 * @brief File containing the eZAutoloadGenerator class.
 	 * @details This class permits to generate autoload array without considering unactivated extensions

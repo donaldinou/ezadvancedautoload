@@ -22,6 +22,7 @@ namespace extension\ezadvancedautoload\classes\enums {
 		/**
 		 * @brief default value
 		 * @details this is the default value of this enumeration
+		 * 
 		 * @var int
 		 */
 		const __default = self::EXTENSION;

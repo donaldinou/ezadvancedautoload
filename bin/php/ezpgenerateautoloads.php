@@ -13,37 +13,25 @@
  * 
  */
 
-if ( file_exists('config.php') ) {
-    require('config.php');
-}
+require ('autoload.php');
 
-// Setup, includes
-//{
-$useBundledComponents = defined( 'EZP_USE_BUNDLED_COMPONENTS' ) ? EZP_USE_BUNDLED_COMPONENTS === true : file_exists( 'lib/ezc' );
-if ( $useBundledComponents )
-{
-    set_include_path( './lib/ezc' . PATH_SEPARATOR . get_include_path() );
-    require 'Base/src/base.php';
-}
-else if ( defined( 'EZC_BASE_PATH' ) )
-{
-    require EZC_BASE_PATH;
-}
-else
-{
-    if ( !@include 'ezc/Base/base.php' )
-    {
-        require 'Base/src/base.php';
-    }
-}
+$cli = \eZCLI::instance();
+$script = \eZScript::instance( array( 'description' => ( "Todo name \n" .
+                "Todo desc\n" .
+                "\n" .
+                "./bin/php/ezcache.php --clear-tag=content" ),
+                'use-session' => false,
+                'use-modules' => false,
+                'use-extensions' => true ) );
+$script->startup();
+$sys = eZSys::instance();
+$script->initialize();
 
-spl_autoload_register( array( 'ezcBase', 'autoload' ) );
-
-require 'extension/ezadvancedautoload/pv/classes/eZAutoloadGeneratorezautoloadgenerator.php';
-require 'kernel/private/interfaces/ezpautoloadoutput.php';
-require 'kernel/private/classes/ezpautoloadclioutput.php';
-require 'kernel/private/options/ezpautoloadgeneratoroptions.php';
-require 'kernel/private/structs/ezpautoloadfilefindcontext.php';
+// Start requiring classes. Needed if it's first autoload run
+if (!class_exists('extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator')) {
+    require_once('extension/ezadvancedautoload/private/classes/ezautoloadgenerator.php');
+}
+//
 
 //}
 
@@ -190,5 +178,7 @@ catch (Exception $e)
 {
     echo( $e->getMessage() . PHP_EOL );
 }
+
+$script->shutdown();
 
 ?>

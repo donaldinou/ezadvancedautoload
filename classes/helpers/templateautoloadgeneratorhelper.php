@@ -21,8 +21,8 @@ namespace extension\ezadvancedautoload\classes\helpers {
 	use extension\ezadvancedautoload\classes\exceptions\unexpectedModeException;
 	
 	/**
-	 * @brief Helper witch provide help to correctly build autoload file
-	 * @details Helper witch provide help to correctly build autoload file
+	 * @brief Helper which provide help to correctly build autoload file
+	 * @details Helper which provide help to correctly build autoload file
 	 * 
 	 * @author Adrien Loyant <adrien.loyant@te-laval.fr>
 	 * 
@@ -31,7 +31,7 @@ namespace extension\ezadvancedautoload\classes\helpers {
 	 * @since 1.0.0
 	 * @copyright GNU Public License v.2
 	 * 
-	 * @package extension\ezadvancedautoload\classes\enums
+	 * @package extension\ezadvancedautoload\classes\helpers
 	 */
 	abstract class templateAutoloadGeneratorHelper extends Helper {
 		
