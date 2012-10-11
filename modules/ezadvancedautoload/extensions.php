@@ -1,7 +1,7 @@
 <?php
 // Start requiring classes. Needed if it's first autoload run
 if (!class_exists('extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper')) {
-	require_once('extension/ezadvancedautoload/classes/helpers/templateautoloadgeneratorhelper.php');
+	require_once( __DIR__ . '/../../../../extension/ezadvancedautoload/classes/helpers/templateautoloadgeneratorhelper.php' );
 }
 // End
 
@@ -17,7 +17,7 @@ $selectedExtensions = \eZExtension::activeExtensions();
 
 // When the user clicks on "Apply changes" button in admin interface in the Extensions section
 if($module->isCurrentAction('ActivateExtensions')) {
-    $ini = eZINI::instance('module.ini');
+    $ini = \eZINI::instance('module.ini');
     $oldModules = $ini->variable('ModuleSettings', 'ModuleList');
 	
     $selectedExtensionArray = array();
@@ -38,19 +38,19 @@ if($module->isCurrentAction('ActivateExtensions')) {
     $toSave = array_unique($toSave);
 
     // open settings/override/site.ini.append[.php] for writing
-    $writeSiteINI = eZINI::instance('site.ini.append', 'settings/override', null, null, false, true);
+    $writeSiteINI = \eZINI::instance('site.ini.append', 'settings/override', null, null, false, true);
     $writeSiteINI->setVariable('ExtensionSettings', 'ActiveExtensions', $toSave);
     $writeSiteINI->save('site.ini.append', '.php', false, false);
-    eZCache::clearByTag('ini');
+    \eZCache::clearByTag('ini');
 
-    eZSiteAccess::reInitialise();
+    \eZSiteAccess::reInitialise();
 
-    $ini = eZINI::instance('module.ini');
+    $ini = \eZINI::instance('module.ini');
     $currentModules = $ini->variable('ModuleSettings', 'ModuleList');
     if($currentModules != $oldModules) {
         // ensure that evaluated policy wildcards in the user info cache
         // will be up to date with the currently activated modules
-        eZCache::clearByID('user_info_cache');
+        \eZCache::clearByID('user_info_cache');
     }
 
     autoloadHelper::regenerateExtension($tpl);

@@ -1,24 +1,25 @@
 <?php 
 namespace extension\ezadvancedautoload\classes\helpers {
 	
-	// Start requiring classes. Needed if it's first autoload run
-	if (!class_exists('extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator')) {
-		require_once('extension/ezadvancedautoload/private/classes/ezautoloadgenerator.php');
-	}
-	if (!class_exists('extension\\ezadvancedautoload\\classes\\enums\\autoloadGeneratorEnum')) {
-		require_once('extension/ezadvancedautoload/classes/enums/autoloadgeneratorenum.php');
-	}
-	if (!class_exists('extension\\ezadvancedautoload\\classes\\exceptions\\unexpectedModeException')) {
-		require_once('extension/ezadvancedautoload/classes/exceptions/unexpectedModeException.php');
-	}
-	if (!class_exists('extension\\ezadvancedautoload\\classes\\helpers\\Helper')) {
-		require_once('extension/ezadvancedautoload/classes/helpers/helper.php');
-	}
-	// End
-	
 	use extension\ezadvancedautoload\pv\classes\eZAutoloadGenerator; // FIXME: private is a reserved keyword
 	use extension\ezadvancedautoload\classes\enums\autoloadGeneratorEnum;
 	use extension\ezadvancedautoload\classes\exceptions\unexpectedModeException;
+	use extension\ezextrafeatures\classes\helpers\Helper;
+	
+	// Start requiring classes. Needed if it's first autoload run
+	if (!class_exists('extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator')) {
+	    require_once( __DIR__ . '/../../../../extension/ezadvancedautoload/private/classes/ezautoloadgenerator.php' );
+	}
+	if (!class_exists('extension\\ezadvancedautoload\\classes\\enums\\autoloadGeneratorEnum')) {
+	    require_once( __DIR__ . '/../../../../extension/ezadvancedautoload/classes/enums/autoloadgeneratorenum.php' );
+	}
+	if (!class_exists('extension\\ezadvancedautoload\\classes\\exceptions\\unexpectedModeException')) {
+	    require_once( __DIR__ . '/../../../../extension/ezadvancedautoload/classes/exceptions/unexpectedModeException.php' );
+	}
+	if (!class_exists('extension\\ezextrafeatures\\classes\\helpers\\Helper')) {
+	    require_once( __DIR__ . '/../../../../extension/ezadvancedautoload/classes/helpers/helper.php' );
+	}
+	// End
 	
 	/**
 	 * @brief Helper which provide help to correctly build autoload file

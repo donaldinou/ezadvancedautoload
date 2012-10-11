@@ -3,14 +3,19 @@
 namespace extension\ezadvancedautoload\pv\classes {
 	
     // Start requiring classes. Needed if it's first autoload run
+    use extension\ezadvancedautoload\classes\helpers\advancedAutoloadHelper;
+
     if (!class_exists('\\eZAutoloadGenerator')) {
-        require_once('kernel/private/classes/ezautoloadgenerator.php');
+        require_once( __DIR__ . '/../../../../kernel/private/classes/ezautoloadgenerator.php' );
     }
     if (!class_exists('\\eZExtension')) {
-        require_once('lib/ezutils/classes/ezextension.php');
+        require_once( __DIR__ . '/../../../../lib/ezutils/classes/ezextension.php' );
     }
     if (!class_exists('\\eZINI')) {
-        require_once('lib/ezutils/classes/ezini.php');
+        require_once( __DIR__ . '/../../../../lib/ezutils/classes/ezini.php' );
+    }
+    if (!class_exists('extension\\ezadvancedautoload\\classes\\helpers\\advancedAutoloadHelper')) {
+        require_once( __DIR__ . '/../../../../extension/ezadvancedautoload/classes/helpers/advancedautoloadhelper.php' );
     }
     //
     
@@ -60,9 +65,8 @@ namespace extension\ezadvancedautoload\pv\classes {
 		 * @param array $extraFilter
 		 * @return array
 		 */
-		// FIXME because of parent definition we cannot force $extraFilter param to be an array
 		protected function buildFileList( $path, $extraFilter = null ) {
-			if (static::isFinerFilterEnabled()) {
+			if (advancedAutoloadHelper::isFinerFilterEnabled()) {
 				$dirSep = preg_quote( DIRECTORY_SEPARATOR );
 				$exclusionFilter = array( "@^{$path}{$dirSep}(var|settings|benchmarks|bin|autoload|port_info|update|templates|tmp|UnitTest|lib{$dirSep}ezc){$dirSep}@" );
 				
@@ -93,8 +97,8 @@ namespace extension\ezadvancedautoload\pv\classes {
 		 * @return array
 		 */
 		public static function findRecursive( $sourceDir, array $includeFilters = array(), array $excludeFilters = array(), \eZAutoloadGenerator $gen ) {
-			if (static::isFinerFilterEnabled()) {
-				$gen->log( "Scanning for PHP-files." );
+			if (advancedAutoloadHelper::isFinerFilterEnabled()) {
+				$gen->log( 'Scanning for PHP-files.' );
 				$gen->startProgressOutput( self::OUTPUT_PROGRESS_PHASE1 );
 			
 				// create the context, and then start walking over the array
@@ -127,7 +131,7 @@ namespace extension\ezadvancedautoload\pv\classes {
 		 * @return void
 		 */
 		public static function findRecursiveCallback( \ezpAutoloadFileFindContext $context, $sourceDir, $fileName, $fileInfo ) {
-			if (static::isFinerFilterEnabled()) {
+			if (advancedAutoloadHelper::isFinerFilterEnabled()) {
 				if ( !($fileInfo['mode'] & 0x4000) ) {
 					// check if we need to add element into the internal array
 					$activeModes = $context->generator->checkMode();
@@ -135,7 +139,7 @@ namespace extension\ezadvancedautoload\pv\classes {
 						switch( $modusOperandi ) {
 							case self::MODE_EXTENSION:
 							case self::MODE_KERNEL_OVERRIDE:
-								$extensionName = static::getExtensionName($sourceDir);
+								$extensionName = advancedAutoloadHelper::getExtensionName($sourceDir);
 								if ( !in_array($extensionName, $context->generator->activeExtensions) ) {
 									$context->generator->updateProgressOutput( eZAutoloadGenerator::OUTPUT_PROGRESS_PHASE1 );
 									return;
@@ -170,11 +174,10 @@ namespace extension\ezadvancedautoload\pv\classes {
 		 * @param int $generatingMode The mode we are generating for autoloads for.
 		 * @return boolean
 		 */
-		// FIXME because of parent definition we cannot force $inProgressAutoloadArray param to be an array
 		protected function classExistsInArray( $class, $checkMode, $file, $inProgressAutoloadArray = null, $generatingMode = null ) {
 			$result = false;
 			
-			if (static::isFinerFilterEnabled()) {
+			if (advancedAutoloadHelper::isFinerFilterEnabled()) {
 				// set the array to check with
 				if ( ( $checkMode === $generatingMode ) && !is_null($inProgressAutoloadArray) ) {
 					$arrayToCheck = $inProgressAutoloadArray;
@@ -185,8 +188,8 @@ namespace extension\ezadvancedautoload\pv\classes {
 				$classCollision = array_key_exists( $class, $arrayToCheck );
 				
 				if ($classCollision) {
-					$fileExtensionName = static::getExtensionName($file);
-					$collisionExtensionName = static::getExtensionName($inProgressAutoloadArray[$class]);
+					$fileExtensionName = advancedAutoloadHelper::getExtensionName($file);
+					$collisionExtensionName = advancedAutoloadHelper::getExtensionName($inProgressAutoloadArray[$class]);
 					$activeExtensionsReverse = array_flip($this->activeExtensions);
 					
 					// if class exist but the current priority is higher then the old one
@@ -211,46 +214,6 @@ namespace extension\ezadvancedautoload\pv\classes {
 			}
 			
 			return $result;
-		}
-		
-		/**
-		 * @brief return true if finer filter is enable
-		 * @details return true if finer filter is enabled in autoload.ini
-		 * 
-		 * @return boolean
-		 * 
-		 * @todo put this in a real helper
-		 */
-		protected static function isFinerFilterEnabled() {
-			$result = false;
-			$autoloadIni = \eZINI::instance( 'autoload.ini' );
-			if ($autoloadIni->hasVariable('Settings', 'FinerFilterAutoload') && $autoloadIni->variable('Settings', 'FinerFilterAutoload') == 'enabled') {
-				$result = true;
-			}
-			return $result;
-		}
-		
-		/**
-		 * @brief Return the extension name to the path
-		 * @details Return the name of the ezpublish extension to the path
-		 * 
-		 * @param string $path
-		 * @return string
-		 * 
-		 * @todo put this in a real helper
-		 */
-		private static function getExtensionName( $path ) {
-			// BUFIX : because of fetchFiles methods
-			$path = (DIRECTORY_SEPARATOR == '/') ? $path : strtr( $path, DIRECTORY_SEPARATOR, '/' );
-			
-			$arrayPath = explode( '/', $path );
-			$arrayPathReversed = array_flip(array_reverse($arrayPath, true));
-			$extensionName = null;
-			if ( isset($arrayPathReversed['extension']) ) {
-				$nextKey = ++$arrayPathReversed['extension'];
-				$extensionName = (isset($arrayPath[$nextKey])) ? $arrayPath[$nextKey] : null;
-			}
-			return $extensionName;
 		}
 		
 	}

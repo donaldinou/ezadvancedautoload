@@ -1,5 +1,5 @@
 <?php 
-namespace extension\ezadvancedautoload\classes\helpers {
+namespace extension\ezextrafeatures\classes\helpers {
 	
 	/**
 	 * @brief Meta class for all helpers
