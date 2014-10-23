@@ -1,4 +1,4 @@
-<?php 
+<?php
 use extension\ezadvancedautoload\helpers\templateAutoloadGeneratorHelper as autoloadHelper;
 use extension\ezadvancedautoload\classes\exceptions\unexpectedModeException;
 
@@ -10,5 +10,3 @@ try {
 } catch (\Exception $e) {
 	\eZDebug::writeError($e->getMessage());
 }
-
-?>
