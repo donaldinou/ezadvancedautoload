@@ -29,19 +29,19 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  
+
   <td id="projectlogo"><img alt="Logo" src="C:\Users\aloyant\Downloads\Logo-TE80x80.png"/></td>
-  
-  
+
+
   <td style="padding-left: 0.5em;">
    <div id="projectname">eZ Advanced Autoload
    &#160;<span id="projectnumber">1.0.0-RC</span>
    </div>
    <div id="projectbrief">Autoload-management-for-eZPublish</div>
   </td>
-  
-  
-  
+
+
+
  </tr>
  </tbody>
 </table>
@@ -67,8 +67,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onfocus="searchBox.OnSearchFieldFocus(true)"
+               onblur="searchBox.OnSearchFieldFocus(false)"
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div id="nav-tree-contents">
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
+  <div id="splitbar" style="-moz-user-select:none;"
        class="ui-resizable-handle">
   </div>
 </div>
@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
+<iframe src="javascript:void(0)" frameborder="0"
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -116,9 +116,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">C:/Users/aloyant/ezadvancedautoload/classes/helpers/templateautoloadgeneratorhelper.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="templateautoloadgeneratorhelper_8php.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php 
+<a href="templateautoloadgeneratorhelper_8php.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
 <a name="l00002"></a>00002 <span class="keyword">namespace </span>extension\ezadvancedautoload\classes\helpers {
-<a name="l00003"></a>00003     
+<a name="l00003"></a>00003
 <a name="l00004"></a>00004     <span class="comment">// Start requiring classes. Needed if it&#39;s first autoload run</span>
 <a name="l00005"></a>00005     <span class="keywordflow">if</span> (!class_exists(<span class="stringliteral">&#39;extension\\ezadvancedautoload\\pv\\classes\\eZAutoloadGenerator&#39;</span>)) {
 <a name="l00006"></a>00006         require_once(<span class="stringliteral">&#39;extension/ezadvancedautoload/private/classes/ezautoloadgenerator.php&#39;</span>);
@@ -133,32 +133,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00015"></a>00015         require_once(<span class="stringliteral">&#39;extension/ezadvancedautoload/classes/helpers/helper.php&#39;</span>);
 <a name="l00016"></a>00016     }
 <a name="l00017"></a>00017     <span class="comment">// End</span>
-<a name="l00018"></a>00018     
-<a name="l00019"></a>00019     use <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html">extension\ezadvancedautoload\pv\classes\eZAutoloadGenerator</a>; <span class="comment">// FIXME: private is a reserved keyword</span>
+<a name="l00018"></a>00018
+<a name="l00019"></a>00019     use <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html">extension\ezadvancedautoload\pv\classes\eZAutoloadGenerator</a>; <span class="comment">// NOTE: private is a reserved keyword</span>
 <a name="l00020"></a>00020     use <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1enums_1_1autoload_generator_enum.html">extension\ezadvancedautoload\classes\enums\autoloadGeneratorEnum</a>;
 <a name="l00021"></a>00021     use <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1exceptions_1_1unexpected_mode_exception.html">extension\ezadvancedautoload\classes\exceptions\unexpectedModeException</a>;
-<a name="l00022"></a>00022     
+<a name="l00022"></a>00022
 <a name="l00036"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html">00036</a>     <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html">templateAutoloadGeneratorHelper</a> <span class="keyword">extends</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1_helper.html">Helper</a> {
-<a name="l00037"></a>00037         
+<a name="l00037"></a>00037
 <a name="l00049"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a9e7331253c8777a53e149cee0fec24e2">00049</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a9e7331253c8777a53e149cee0fec24e2">regenerate</a>($mode, \eZTemplate $template = null ) {
 <a name="l00050"></a>00050             <span class="keywordflow">if</span> (is_int($mode)) {
 <a name="l00051"></a>00051                 <span class="keywordflow">switch</span> ($mode) {
 <a name="l00052"></a>00052                     <span class="keywordflow">case</span> autoloadGeneratorEnum::KERNEL:
 <a name="l00053"></a>00053                         static::regenerateKernel($template);
 <a name="l00054"></a>00054                         <span class="keywordflow">break</span>;
-<a name="l00055"></a>00055                             
+<a name="l00055"></a>00055
 <a name="l00056"></a>00056                     <span class="keywordflow">case</span> autoloadGeneratorEnum::KERNEL_OVERRIDE:
 <a name="l00057"></a>00057                         static::regenerateKernelOverride($template);
 <a name="l00058"></a>00058                         <span class="keywordflow">break</span>;
-<a name="l00059"></a>00059                 
+<a name="l00059"></a>00059
 <a name="l00060"></a>00060                     <span class="keywordflow">case</span> autoloadGeneratorEnum::EXTENSION:
 <a name="l00061"></a>00061                         static::regenerateExtension($template);
 <a name="l00062"></a>00062                         <span class="keywordflow">break</span>;
-<a name="l00063"></a>00063                 
+<a name="l00063"></a>00063
 <a name="l00064"></a>00064                     <span class="keywordflow">case</span> autoloadGeneratorEnum::TEST:
 <a name="l00065"></a>00065                         static::regenerateTest($template);
 <a name="l00066"></a>00066                         <span class="keywordflow">break</span>;
-<a name="l00067"></a>00067                 
+<a name="l00067"></a>00067
 <a name="l00068"></a>00068                     <span class="keywordflow">default</span>:
 <a name="l00069"></a>00069                         <span class="comment">// Do nothing;</span>
 <a name="l00070"></a>00070                         <span class="keywordflow">break</span>;
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00073"></a>00073                 <span class="keywordflow">throw</span> <span class="keyword">new</span> unexpectedModeException( $mode );
 <a name="l00074"></a>00074             }
 <a name="l00075"></a>00075         }
-<a name="l00076"></a>00076         
+<a name="l00076"></a>00076
 <a name="l00084"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a211ba9e5455710fff3650c6346bb25b2">00084</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a211ba9e5455710fff3650c6346bb25b2" title="Regenerate autoload for kernel only (ezp_kernel)">regenerateKernel</a>( \eZTemplate $template = null ) {
 <a name="l00085"></a>00085             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a> = new \ezpAutoloadGeneratorOptions();
 <a name="l00086"></a>00086             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>-&gt;searchKernelFiles = <span class="keyword">true</span>;
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00090"></a>00090             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>-&gt;excludeDirs = array();
 <a name="l00091"></a>00091             static::runGenerate(<a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>, $template);
 <a name="l00092"></a>00092         }
-<a name="l00093"></a>00093         
+<a name="l00093"></a>00093
 <a name="l00101"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a16974fee22eab241cc07d0cb204a1416">00101</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a16974fee22eab241cc07d0cb204a1416" title="Regenerate autoload for kernel override only (ezp_override)">regenerateKernelOverride</a>( \eZTemplate $template = null ) {
 <a name="l00102"></a>00102             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a> = new \ezpAutoloadGeneratorOptions();
 <a name="l00103"></a>00103             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>-&gt;searchKernelFiles = <span class="keyword">false</span>;
@@ -187,7 +187,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00107"></a>00107             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>-&gt;excludeDirs = array();
 <a name="l00108"></a>00108             static::runGenerate(<a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>, $template);
 <a name="l00109"></a>00109         }
-<a name="l00110"></a>00110         
+<a name="l00110"></a>00110
 <a name="l00118"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a3d8b479039142fc9527828cc4e3e37b3">00118</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a3d8b479039142fc9527828cc4e3e37b3" title="Regenerate autoload for extension only (ezp_extension)">regenerateExtension</a>( \eZTemplate $template = null ) {
 <a name="l00119"></a>00119             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a> = new \ezpAutoloadGeneratorOptions();
 <a name="l00120"></a>00120             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>-&gt;searchKernelFiles = <span class="keyword">false</span>;
@@ -197,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00124"></a>00124             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>-&gt;excludeDirs = array();
 <a name="l00125"></a>00125             static::runGenerate(<a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>, $template);
 <a name="l00126"></a>00126         }
-<a name="l00127"></a>00127         
+<a name="l00127"></a>00127
 <a name="l00135"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a67ef43192f34d9f76711d37eeef46836">00135</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#a67ef43192f34d9f76711d37eeef46836" title="Regenerate autoload for tests only (ezp_tests)">regenerateTest</a>( \eZTemplate $template = null ) {
 <a name="l00136"></a>00136             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a> = new \ezpAutoloadGeneratorOptions();
 <a name="l00137"></a>00137             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>-&gt;searchKernelFiles = <span class="keyword">false</span>;
@@ -207,32 +207,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00141"></a>00141             <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>-&gt;excludeDirs = array();
 <a name="l00142"></a>00142             static::runGenerate(<a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>, $template);
 <a name="l00143"></a>00143         }
-<a name="l00144"></a>00144         
+<a name="l00144"></a>00144
 <a name="l00153"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#aa148374d28a61457d9e354c0d84df195">00153</a>         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1classes_1_1helpers_1_1template_autoload_generator_helper.html#aa148374d28a61457d9e354c0d84df195" title="launch the regeneration">runGenerate</a>( \ezpAutoloadGeneratorOptions <a class="code" href="ezpgenerateautoloads_8php.html#a11b2b8d92ed8fe93c2e53197e661142c">$autoloadOptions</a>, \eZTemplate $template = null ) {
 <a name="l00154"></a>00154             <a class="code" href="ezpgenerateautoloads_8php.html#a86e95d193d321273aadaef08750683a8">$autoloadGenerator</a> = <span class="keyword">new</span> eZAutoloadGenerator($autoloadOptions);
-<a name="l00155"></a>00155                 
+<a name="l00155"></a>00155
 <a name="l00156"></a>00156             <span class="keywordflow">try</span> {
 <a name="l00157"></a>00157                 <a class="code" href="ezpgenerateautoloads_8php.html#a86e95d193d321273aadaef08750683a8">$autoloadGenerator</a>-&gt;buildAutoloadArrays();
-<a name="l00158"></a>00158                     
+<a name="l00158"></a>00158
 <a name="l00159"></a>00159                 $messages = <a class="code" href="ezpgenerateautoloads_8php.html#a86e95d193d321273aadaef08750683a8">$autoloadGenerator</a>-&gt;getMessages();
 <a name="l00160"></a>00160                 <span class="keywordflow">foreach</span>($messages as $message) {
 <a name="l00161"></a>00161                     \eZDebug::writeNotice($message, <span class="stringliteral">&#39;eZAutoloadGenerator&#39;</span>);
 <a name="l00162"></a>00162                 }
-<a name="l00163"></a>00163                     
+<a name="l00163"></a>00163
 <a name="l00164"></a>00164                 $warnings = <a class="code" href="ezpgenerateautoloads_8php.html#a86e95d193d321273aadaef08750683a8">$autoloadGenerator</a>-&gt;getWarnings();
 <a name="l00165"></a>00165                 <span class="keywordflow">foreach</span> ($warnings as &amp;$warning) {
 <a name="l00166"></a>00166                     \eZDebug::writeWarning($warning, <span class="stringliteral">&#39;eZAutoloadGenerator&#39;</span>);
-<a name="l00167"></a>00167                         
+<a name="l00167"></a>00167
 <a name="l00168"></a>00168                     <span class="comment">// For web output we want to mark some of the important parts of</span>
 <a name="l00169"></a>00169                     <span class="comment">// the message</span>
 <a name="l00170"></a>00170                     $pattern = <span class="stringliteral">&#39;@^Class\s+(\w+)\s+.* file\s(.+\.php).*\n(.+\.php)\s@&#39;</span>;
 <a name="l00171"></a>00171                     preg_match($pattern, $warning, $m);
-<a name="l00172"></a>00172                         
+<a name="l00172"></a>00172
 <a name="l00173"></a>00173                     $warning = str_replace($m[1], <span class="stringliteral">&#39;&lt;strong&gt;&#39;</span>.$m[1].<span class="stringliteral">&#39;&lt;/strong&gt;&#39;</span>, $warning);
 <a name="l00174"></a>00174                     $warning = str_replace($m[2], <span class="stringliteral">&#39;&lt;em&gt;&#39;</span>.$m[2].<span class="stringliteral">&#39;&lt;/em&gt;&#39;</span>, $warning);
 <a name="l00175"></a>00175                     $warning = str_replace($m[3], <span class="stringliteral">&#39;&lt;em&gt;&#39;</span>.$m[3].<span class="stringliteral">&#39;&lt;/em&gt;&#39;</span>, $warning);
 <a name="l00176"></a>00176                 }
-<a name="l00177"></a>00177                     
+<a name="l00177"></a>00177
 <a name="l00178"></a>00178                 <span class="keywordflow">if</span> ($template !== null) {
 <a name="l00179"></a>00179                     $template-&gt;setVariable(<span class="stringliteral">&#39;warning_messages&#39;</span>, $warnings);
 <a name="l00180"></a>00180                 }
@@ -241,12 +241,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00183"></a>00183                 \eZDebug::writeError($e-&gt;getMessage());
 <a name="l00184"></a>00184             }
 <a name="l00185"></a>00185         }
-<a name="l00186"></a>00186     
+<a name="l00186"></a>00186
 <a name="l00187"></a>00187     }
-<a name="l00188"></a>00188     
+<a name="l00188"></a>00188
 <a name="l00189"></a>00189 }
-<a name="l00190"></a>00190 
-<a name="l00191"></a>00191 
+<a name="l00190"></a>00190
+<a name="l00191"></a>00191
 <a name="l00192"></a>00192 ?&gt;
 </pre></div></div><!-- contents -->
 </div>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $Module = array(
                 'name' => 'ezadvancedautoload',
@@ -12,7 +12,7 @@ $ViewList['extensions'] = array(
                 'script' => 'extensions.php',
                 'functions' => array( 'extensions' ),
                 'params' => array(),
-                'single_post_actions' => array( 
+                'single_post_actions' => array(
                                 'ActivateExtensionsButton' => 'ActivateExtensions',
                                 'GenerateAutoloadArraysButton' => 'GenerateAutoloadArrays',
                                 'GenerateAutoloadOverrideArraysButton' => 'GenerateAutoloadOverrideArrays'
@@ -23,5 +23,3 @@ $ViewList['extensions'] = array(
 
 $FunctionList = array();
 $FunctionList['extensions'] = array();
-
-?>

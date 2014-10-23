@@ -1,7 +1,7 @@
 {if and( is_set( $warning_messages), $warning_messages|count|ge(1) )}
     <div class="message-warning">
         <h2>
-            <span class="time">[{currentdate()|l10n( 'shortdatetime' )}]</span> 
+            <span class="time">[{currentdate()|l10n( 'shortdatetime' )}]</span>
             {'Problems detected during autoload generation:'|i18n( 'design/admin/setup/extensions' )}
         </h2>
         <ul>

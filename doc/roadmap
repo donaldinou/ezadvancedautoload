@@ -18,3 +18,5 @@ _________________________________________________________________________
    * Set autoload generation configurable
    * Modify BackOffice template to authorize all we can set in command
    line interface
+   * design/ezadvancedautoload/templates/setup/extensions.tpl : GenerateAutoloadOverrideArraysButton -> hide button if kernel mode not activated
+   * design/ezadvancedautoload/templates/setup/extensions.tpl :  $authorized_lib -> Manage authorized lib with file parsing helper in futur

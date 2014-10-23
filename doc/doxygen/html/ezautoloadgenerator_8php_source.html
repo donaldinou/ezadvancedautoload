@@ -29,19 +29,19 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  
+
   <td id="projectlogo"><img alt="Logo" src="C:\Users\aloyant\Downloads\Logo-TE80x80.png"/></td>
-  
-  
+
+
   <td style="padding-left: 0.5em;">
    <div id="projectname">eZ Advanced Autoload
    &#160;<span id="projectnumber">1.0.0-RC</span>
    </div>
    <div id="projectbrief">Autoload-management-for-eZPublish</div>
   </td>
-  
-  
-  
+
+
+
  </tr>
  </tbody>
 </table>
@@ -67,8 +67,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onfocus="searchBox.OnSearchFieldFocus(true)"
+               onblur="searchBox.OnSearchFieldFocus(false)"
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div id="nav-tree-contents">
     </div>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
+  <div id="splitbar" style="-moz-user-select:none;"
        class="ui-resizable-handle">
   </div>
 </div>
@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
+<iframe src="javascript:void(0)" frameborder="0"
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -116,31 +116,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">C:/Users/aloyant/ezadvancedautoload/private/classes/ezautoloadgenerator.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ezautoloadgenerator_8php.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php 
-<a name="l00002"></a>00002 <span class="comment">// FIXME : private is a reserved keyword</span>
+<a href="ezautoloadgenerator_8php.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">// NOTE : private is a reserved keyword</span>
 <a name="l00003"></a><a class="code" href="namespaceextension_1_1ezadvancedautoload_1_1pv_1_1classes.html">00003</a> <span class="keyword">namespace </span>extension\ezadvancedautoload\pv\classes {
-<a name="l00004"></a>00004     
+<a name="l00004"></a>00004
 <a name="l00020"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html">00020</a>     <span class="keyword">class </span><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html">eZAutoloadGenerator</a> <span class="keyword">extends</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html">\eZAutoloadGenerator</a> {
-<a name="l00021"></a>00021         
+<a name="l00021"></a>00021
 <a name="l00028"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#abe431f515e0a071f1ca74fd276813c19">00028</a>         <span class="keyword">protected</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#abe431f515e0a071f1ca74fd276813c19">$activeExtensions</a>;
-<a name="l00029"></a>00029         
+<a name="l00029"></a>00029
 <a name="l00037"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#ae74a5ac61349b54be1777fda45022161">00037</a>         <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#ae74a5ac61349b54be1777fda45022161" title="Constructs class to generate autoload arrays.">__construct</a>( \ezpAutoloadGeneratorOptions $options = null ) {
 <a name="l00038"></a>00038             $this-&gt;activeExtensions = \eZExtension::activeExtensions();
 <a name="l00039"></a>00039             parent::__construct($options);
 <a name="l00040"></a>00040         }
-<a name="l00041"></a>00041         
-<a name="l00051"></a>00051         <span class="comment">// FIXME because of parent definition we cannot force $extraFilter param to be an array</span>
+<a name="l00041"></a>00041
+<a name="l00051"></a>00051         <span class="comment">// NOTE because of parent definition we cannot force $extraFilter param to be an array</span>
 <a name="l00052"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a395ea8ecd54bad970889066e563333b4">00052</a>         <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a395ea8ecd54bad970889066e563333b4" title="Builds a filelist of PHP files in $path.">buildFileList</a>( $path, $extraFilter = null ) {
 <a name="l00053"></a>00053             <span class="keywordflow">if</span> (static::isFinerFilterEnabled()) {
 <a name="l00054"></a>00054                 $dirSep = preg_quote( DIRECTORY_SEPARATOR );
 <a name="l00055"></a>00055                 $exclusionFilter = array( <span class="stringliteral">&quot;@^{$path}{$dirSep}(var|settings|benchmarks|bin|autoload|port_info|update|templates|tmp|UnitTest|lib{$dirSep}ezc){$dirSep}@&quot;</span> );
-<a name="l00056"></a>00056                 
+<a name="l00056"></a>00056
 <a name="l00057"></a>00057                 <span class="keywordflow">if</span> ( !empty( $extraFilter ) &amp;&amp; is_array( $extraFilter ) ) {
 <a name="l00058"></a>00058                     <span class="keywordflow">foreach</span>( $extraFilter as $filter ) {
 <a name="l00059"></a>00059                         $exclusionFilter[] = $filter;
 <a name="l00060"></a>00060                     }
 <a name="l00061"></a>00061                 }
-<a name="l00062"></a>00062             
+<a name="l00062"></a>00062
 <a name="l00063"></a>00063                 <span class="keywordflow">if</span> (!empty( $path ) ) {
 <a name="l00064"></a>00064                     <span class="keywordflow">return</span> static::findRecursive( $path, array( <span class="stringliteral">&#39;@\.php$@&#39;</span> ), $exclusionFilter, $this );
 <a name="l00065"></a>00065                 }
@@ -149,31 +149,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068                 <span class="keywordflow">return</span> parent::buildFileList( $path, $extraFilter );
 <a name="l00069"></a>00069             }
 <a name="l00070"></a>00070         }
-<a name="l00071"></a>00071         
+<a name="l00071"></a>00071
 <a name="l00083"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a14dc03f8b1771fe4bba821f803f29b18">00083</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a14dc03f8b1771fe4bba821f803f29b18" title="Walker to find file.">findRecursive</a>( $sourceDir, array $includeFilters = array(), array $excludeFilters = array(), \<a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html">eZAutoloadGenerator</a> $gen ) {
 <a name="l00084"></a>00084             <span class="keywordflow">if</span> (static::isFinerFilterEnabled()) {
 <a name="l00085"></a>00085                 $gen-&gt;log( <span class="stringliteral">&quot;Scanning for PHP-files.&quot;</span> );
 <a name="l00086"></a>00086                 $gen-&gt;startProgressOutput( self::OUTPUT_PROGRESS_PHASE1 );
-<a name="l00087"></a>00087             
+<a name="l00087"></a>00087
 <a name="l00088"></a>00088                 <span class="comment">// create the context, and then start walking over the array</span>
 <a name="l00089"></a>00089                 $context = new \ezpAutoloadFileFindContext();
 <a name="l00090"></a>00090                 $context-&gt;generator = $gen;
-<a name="l00091"></a>00091             
+<a name="l00091"></a>00091
 <a name="l00092"></a>00092                 $callback = array( __NAMESPACE__.<span class="stringliteral">&#39;\eZAutoloadGenerator&#39;</span>, <span class="stringliteral">&#39;findRecursiveCallback&#39;</span> );
 <a name="l00093"></a>00093                 static::walkRecursive( $sourceDir, $includeFilters, $excludeFilters, $callback, $context );
-<a name="l00094"></a>00094             
+<a name="l00094"></a>00094
 <a name="l00095"></a>00095                 <span class="comment">// return the found and pattern-matched files</span>
 <a name="l00096"></a>00096                 sort( $context-&gt;elements );
-<a name="l00097"></a>00097             
+<a name="l00097"></a>00097
 <a name="l00098"></a>00098                 $gen-&gt;stopProgressOutput( self::OUTPUT_PROGRESS_PHASE1 );
 <a name="l00099"></a>00099                 $gen-&gt;log( <span class="stringliteral">&quot;Scan complete. Found {$context-&gt;count} PHP files.&quot;</span> );
-<a name="l00100"></a>00100             
+<a name="l00100"></a>00100
 <a name="l00101"></a>00101                 <span class="keywordflow">return</span> $context-&gt;elements;
 <a name="l00102"></a>00102             } <span class="keywordflow">else</span> {
 <a name="l00103"></a>00103                 <span class="keywordflow">return</span> parent::findRecursive( $sourceDir, $includeFilters, $excludeFilters, $gen );
 <a name="l00104"></a>00104             }
 <a name="l00105"></a>00105         }
-<a name="l00106"></a>00106         
+<a name="l00106"></a>00106
 <a name="l00117"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a300416501317475b3468ff5862cc0835">00117</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a300416501317475b3468ff5862cc0835" title="Callback used ezcBaseFile.">findRecursiveCallback</a>( \ezpAutoloadFileFindContext $context, $sourceDir, $fileName, $fileInfo ) {
 <a name="l00118"></a>00118             <span class="keywordflow">if</span> (static::isFinerFilterEnabled()) {
 <a name="l00119"></a>00119                 <span class="keywordflow">if</span> ( !($fileInfo[<span class="stringliteral">&#39;mode&#39;</span>] &amp; 0x4000) ) {
@@ -194,22 +194,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00134"></a>00134                                 <span class="keywordflow">break</span>;
 <a name="l00135"></a>00135                         }
 <a name="l00136"></a>00136                     }
-<a name="l00137"></a>00137                     
+<a name="l00137"></a>00137
 <a name="l00138"></a>00138                     <span class="comment">// update the statistics</span>
 <a name="l00139"></a>00139                     $context-&gt;elements[] = $sourceDir . DIRECTORY_SEPARATOR . $fileName;
 <a name="l00140"></a>00140                     $context-&gt;count++;
-<a name="l00141"></a>00141                     
+<a name="l00141"></a>00141
 <a name="l00142"></a>00142                     $context-&gt;generator-&gt;updateProgressOutput( eZAutoloadGenerator::OUTPUT_PROGRESS_PHASE1 );
 <a name="l00143"></a>00143                 }
 <a name="l00144"></a>00144             } <span class="keywordflow">else</span> {
 <a name="l00145"></a>00145                 parent::findRecursiveCallBack( $context, $sourceDir, $fileName, $fileInfo );
 <a name="l00146"></a>00146             }
 <a name="l00147"></a>00147         }
-<a name="l00148"></a>00148         
-<a name="l00161"></a>00161         <span class="comment">// FIXME because of parent definition we cannot force $inProgressAutoloadArray param to be an array</span>
+<a name="l00148"></a>00148
+<a name="l00161"></a>00161         <span class="comment">// NOTE because of parent definition we cannot force $inProgressAutoloadArray param to be an array</span>
 <a name="l00162"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a7826365f88fc9c2d5b3cfbb585db29b3">00162</a>         <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a7826365f88fc9c2d5b3cfbb585db29b3" title="Internal method used to check if an class exist autoload arrays.">classExistsInArray</a>( $class, $checkMode, $file, $inProgressAutoloadArray = null, $generatingMode = null ) {
 <a name="l00163"></a>00163             $result = <span class="keyword">false</span>;
-<a name="l00164"></a>00164             
+<a name="l00164"></a>00164
 <a name="l00165"></a>00165             <span class="keywordflow">if</span> (static::isFinerFilterEnabled()) {
 <a name="l00166"></a>00166                 <span class="comment">// set the array to check with</span>
 <a name="l00167"></a>00167                 <span class="keywordflow">if</span> ( ( $checkMode === $generatingMode ) &amp;&amp; !is_null($inProgressAutoloadArray) ) {
@@ -217,14 +217,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00169"></a>00169                 } <span class="keywordflow">else</span> {
 <a name="l00170"></a>00170                     $arrayToCheck = $this-&gt;existingAutoloadArrays[$checkMode];
 <a name="l00171"></a>00171                 }
-<a name="l00172"></a>00172                 
+<a name="l00172"></a>00172
 <a name="l00173"></a>00173                 $classCollision = array_key_exists( $class, $arrayToCheck );
-<a name="l00174"></a>00174                 
+<a name="l00174"></a>00174
 <a name="l00175"></a>00175                 <span class="keywordflow">if</span> ($classCollision) {
 <a name="l00176"></a>00176                     $fileExtensionName = static::getExtensionName($file);
 <a name="l00177"></a>00177                     $collisionExtensionName = static::getExtensionName($inProgressAutoloadArray[$class]);
 <a name="l00178"></a>00178                     $activeExtensionsReverse = array_flip($this-&gt;activeExtensions);
-<a name="l00179"></a>00179                     
+<a name="l00179"></a>00179
 <a name="l00180"></a>00180                     <span class="comment">// if class exist but the current priority is higher then the old one</span>
 <a name="l00181"></a>00181                     <span class="keywordflow">if</span> (isset($activeExtensionsReverse[$collisionExtensionName]) &amp;&amp; isset($activeExtensionsReverse[$fileExtensionName])
 <a name="l00182"></a>00182                             &amp;&amp; (<span class="keywordtype">int</span>)$activeExtensionsReverse[$collisionExtensionName] &lt; (<span class="keywordtype">int</span>)$activeExtensionsReverse[$fileExtensionName] ) {
@@ -237,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00189"></a>00189                         $result = <span class="keyword">true</span>;
 <a name="l00190"></a>00190                     }
 <a name="l00191"></a>00191                 }
-<a name="l00192"></a>00192                 
+<a name="l00192"></a>00192
 <a name="l00193"></a>00193                 <span class="comment">// If there is a class collisions we want to give feedback to the user.</span>
 <a name="l00194"></a>00194                 <span class="keywordflow">if</span> ( $result ) {
 <a name="l00195"></a>00195                     $this-&gt;logIssue( $class, $checkMode, $file, $inProgressAutoloadArray, $generatingMode );
@@ -245,10 +245,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00197"></a>00197             } <span class="keywordflow">else</span> {
 <a name="l00198"></a>00198                 $result = parent::classExistsInArray( $class, $checkMode, $file, $inProgressAutoloadArray, $generatingMode );
 <a name="l00199"></a>00199             }
-<a name="l00200"></a>00200             
+<a name="l00200"></a>00200
 <a name="l00201"></a>00201             <span class="keywordflow">return</span> $result;
 <a name="l00202"></a>00202         }
-<a name="l00203"></a>00203         
+<a name="l00203"></a>00203
 <a name="l00212"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#afd315c7aa866c6a1bfcf75ae27ce8c3b">00212</a>         <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#afd315c7aa866c6a1bfcf75ae27ce8c3b" title="return true if finer filter is enable">isFinerFilterEnabled</a>() {
 <a name="l00213"></a>00213             $result = <span class="keyword">false</span>;
 <a name="l00214"></a>00214             $autoloadIni = \eZINI::instance( <span class="stringliteral">&#39;autoload.ini&#39;</span> );
@@ -257,11 +257,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00217"></a>00217             }
 <a name="l00218"></a>00218             <span class="keywordflow">return</span> $result;
 <a name="l00219"></a>00219         }
-<a name="l00220"></a>00220         
+<a name="l00220"></a>00220
 <a name="l00230"></a><a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a2556d8c52deb73d88fb2eff9342a7237">00230</a>         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classextension_1_1ezadvancedautoload_1_1pv_1_1classes_1_1e_z_autoload_generator.html#a2556d8c52deb73d88fb2eff9342a7237" title="Return the extension name to the path.">getExtensionName</a>( $path ) {
 <a name="l00231"></a>00231             <span class="comment">// BUFIX : because of fetchFiles methods</span>
 <a name="l00232"></a>00232             $path = (DIRECTORY_SEPARATOR == <span class="charliteral">&#39;/&#39;</span>) ? $path : strtr( $path, DIRECTORY_SEPARATOR, <span class="charliteral">&#39;/&#39;</span> );
-<a name="l00233"></a>00233             
+<a name="l00233"></a>00233
 <a name="l00234"></a>00234             $arrayPath = explode( <span class="charliteral">&#39;/&#39;</span>, $path );
 <a name="l00235"></a>00235             $arrayPathReversed = array_flip(array_reverse($arrayPath, <span class="keyword">true</span>));
 <a name="l00236"></a>00236             $extensionName = null;
@@ -271,9 +271,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00240"></a>00240             }
 <a name="l00241"></a>00241             <span class="keywordflow">return</span> $extensionName;
 <a name="l00242"></a>00242         }
-<a name="l00243"></a>00243         
+<a name="l00243"></a>00243
 <a name="l00244"></a>00244     }
-<a name="l00245"></a>00245 
+<a name="l00245"></a>00245
 <a name="l00246"></a>00246 }
 <a name="l00247"></a>00247 ?&gt;
 </pre></div></div><!-- contents -->

@@ -1,7 +1,7 @@
 <?php
 // Start requiring classes. Needed if it's first autoload run
 if (!class_exists('extension\\ezadvancedautoload\\classes\\helpers\\templateAutoloadGeneratorHelper')) {
-	require_once( __DIR__ . '/../../../../extension/ezadvancedautoload/classes/helpers/templateautoloadgeneratorhelper.php' );
+    require_once( __DIR__ . '/../../../../extension/ezadvancedautoload/classes/helpers/templateautoloadgeneratorhelper.php' );
 }
 // End
 
@@ -19,12 +19,12 @@ $selectedExtensions = \eZExtension::activeExtensions();
 if($module->isCurrentAction('ActivateExtensions')) {
     $ini = \eZINI::instance('module.ini');
     $oldModules = $ini->variable('ModuleSettings', 'ModuleList');
-	
+
     $selectedExtensionArray = array();
     if($http->hasPostVariable('ActiveExtensionList')) {
         $selectedExtensionArray = $http->postVariable('ActiveExtensionList');
         if(!is_array($selectedExtensionArray)) {
-        	$selectedExtensionArray = array($selectedExtensionArray);
+            $selectedExtensionArray = array($selectedExtensionArray);
         }
     }
 
@@ -77,5 +77,3 @@ $Result['path'] = array(
                             'text' => ezpI18n::tr('kernel/setup', 'Extension configuration')
                         )
                 );
-
-?>

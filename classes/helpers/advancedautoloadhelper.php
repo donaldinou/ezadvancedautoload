@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace extension\ezadvancedautoload\classes\helpers {
-    
+
     use extension\ezextrafeatures\classes\helpers\Helper;
-    
+
     // Start requiring classes. Needed if it's first autoload run
     if (!class_exists('extension\\ezextrafeatures\\classes\\helpers\\Helper')) {
         require_once( __DIR__ .'/../../../../extension/ezadvancedautoload/classes/helpers/helper.php' );
     }
     //
-    
+
     /**
      * @brief Helper for advanced autoload extension
      * @details Helper for advanced autoload extension
@@ -23,7 +23,7 @@ namespace extension\ezadvancedautoload\classes\helpers {
      * @package extension\ezadvancedautoload\classes\helpers
      */
     class advancedAutoloadHelper extends Helper {
-        
+
         /**
          * @brief return true if finer filter is enable
          * @details return true if finer filter is enabled in autoload.ini
@@ -43,7 +43,7 @@ namespace extension\ezadvancedautoload\classes\helpers {
             }
             return $result;
         }
-        
+
         /**
          * @brief Return the extension name to the path
          * @details Return the name of the ezpublish extension to the path
@@ -54,7 +54,7 @@ namespace extension\ezadvancedautoload\classes\helpers {
         public static function getExtensionName( $path ) {
             // BUFIX : because of fetchFiles methods
             $path = (DIRECTORY_SEPARATOR == '/') ? $path : strtr( $path, DIRECTORY_SEPARATOR, '/' );
-            	
+
             $arrayPath = explode( '/', $path );
             $arrayPathReversed = array_flip(array_reverse($arrayPath, true));
             $extensionName = null;
@@ -64,8 +64,7 @@ namespace extension\ezadvancedautoload\classes\helpers {
             }
             return $extensionName;
         }
-        
+
     }
-    
+
 }
-?>
