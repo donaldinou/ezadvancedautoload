@@ -86,5 +86,6 @@
 {ezscript_require( array( concat( 'ezjsc::', $preferred_lib ), concat( 'ezjsc::', $preferred_lib, 'io' ), concat( 'updatebuttonstyle_', $preferred_lib, '.js' ) ) )}
 {undef $authorized_lib $preferred_lib}
 
-{if is_set($available_extension_array)}{undef $available_extension_array}{/if}
-{if is_set($selected_extension_array)}{undef $selected_extension_array}{/if}
+{* Variables are not defined with def *}
+{*if is_set($available_extension_array)}{undef $available_extension_array}{/if*}
+{*if is_set($selected_extension_array)}{undef $selected_extension_array}{/if*}
